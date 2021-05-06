@@ -1,1 +1,1 @@
-# math-textbook-template
+# Maths Textbook-style Template
