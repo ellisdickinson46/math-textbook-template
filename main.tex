@@ -8,6 +8,7 @@
 % Other compilers do not support some of the features within this document.
 %
 \documentclass[fleqn]{article}
+\usepackage[dvipsnames]{xcolor}
 \usepackage[a4paper, portrait, margin=1.9cm]{geometry}
 \usepackage{titlesec}
 \usepackage{lipsum}
@@ -24,7 +25,8 @@
 %\usepackage[none]{hyphenat}
 \usepackage{tasks}
 \usepackage{anyfontsize}
-\usepackage[export]{adjustbox}% http://ctan.org/pkg/adjustbox
+\usepackage[export]{adjustbox}		% http://ctan.org/pkg/adjustbox
+
 
 
 
@@ -87,18 +89,14 @@
 
 \newtcolorbox{mybox2}[2][]{
 	enhanced,
-	breakable,
-	before skip=2mm,
-	after skip=2mm,
+	before skip=2mm,after skip=2mm,
 	colback=black!5,
 	colframe=black!50,
 	boxrule=0.2mm,
 	attach boxed title to top left={
-		xshift=1cm,
-		yshift*=1mm-\tcboxedtitleheight},
-	varwidth boxed title*=-3cm,
-	boxed title style={
-		frame code={
+		xshift=1cm,yshift*=1mm-\tcboxedtitleheight},
+		varwidth boxed title*=-3cm,
+		boxed title style={frame code={
             \path[fill=tcbcolback!30!black]
               ([yshift=-1mm,xshift=-1mm]frame.north west)
                 arc[start angle=0,end angle=180,radius=1mm]
@@ -112,12 +110,13 @@
               -- ([xshift=-1mm,yshift=-1mm]frame.north west)
               [sharp corners]-- cycle;
             },interior engine=empty,
-		},
+          },
 	fonttitle=\sffamily\bfseries,
-	title={#2},
-	before upper = \sffamily
+    title={#2},
+    before upper = \sffamily,
+    #1
 }
-
+          
 \tcbset{%
     example/.style={%
         enhanced,
@@ -238,6 +237,7 @@
 \begin{document}
 
 \input{components/titlepage}
+\vfill
 \input{components/keyinformation}
 
 \newpage
@@ -245,7 +245,7 @@
 
 
 % TODO Links to the Big Picture
-\begin{mybox2}[colbacktitle=green]{Links to the Big Picture}
+\begin{mybox2}[colbacktitle=WildStrawberry]{Links to the Big Picture}
 	\begin{enumerate}[label*=P\arabic*., leftmargin=*]
 		\setlength{\itemsep}{-2pt}%
 		\setcounter{enumi}{\getcurrentref{section}-1}
