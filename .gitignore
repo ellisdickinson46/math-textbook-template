@@ -17,6 +17,9 @@ Thumbs.db
 # Compiled C++ files
 *.out
 
+# Compiled PDF Files
+*.pdf
+
 # Application specific files
 venv
 node_modules
