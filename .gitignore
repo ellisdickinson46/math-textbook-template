@@ -19,6 +19,9 @@ Thumbs.db
 
 # Compiled PDF Files
 *.pdf
+*.aux
+*.log
+*.gz
 
 # Application specific files
 venv
