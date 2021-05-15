@@ -196,7 +196,9 @@
 % Define custom footer
 \fancypagestyle{plain}{
 	\fancyhf{} % clear all header and footer fields
-	\fancyfoot[C]{
+	\fancyfoot[OC]{ %right hand side
+		\vspace{-0.7em}
+		\hfill {\sffamily\raggedright {\color{separatorgray}\getcurrentref{page}} \\}\vspace{-1.6em}
 		\begin{minipage}{.3\linewidth}
 			\color{separatorgray}\rule{\linewidth}{0.4pt}
 		\end{minipage}
@@ -206,12 +208,23 @@
 		\end{minipage}
 		\begin{minipage}{.3\linewidth}
 			\color{separatorgray}\rule{\linewidth}{0.4pt}
-		\end{minipage}\\
-		%jfh
+		\end{minipage}
 	}
-	
-	%\fancyfoot[C]{\sffamily\fontsize{9pt}{9pt}\selectfont\formattedunittitle{ -- }\bookletunittitle { -- }Page \thepage} % 
-	
+	\fancyfoot[EC]{ %left hand side
+		\vspace{-0.7em}
+		{\sffamily\raggedright {\color{separatorgray}\getcurrentref{page}} \\}\vspace{-1.6em}
+		\begin{minipage}{.3\linewidth}
+			\color{separatorgray}\rule{\linewidth}{0.4pt}
+		\end{minipage}
+		\begin{minipage}{.1\linewidth}
+			\centering
+			\includegraphics[scale=0.4]{images/ehc-brand-separator-icon}
+		\end{minipage}
+		\begin{minipage}{.3\linewidth}
+			\color{separatorgray}\rule{\linewidth}{0.4pt}
+		\end{minipage}
+	}
+
 	\renewcommand{\headrulewidth}{0pt}
 	\renewcommand{\footrulewidth}{0pt}
 }
