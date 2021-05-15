@@ -9,12 +9,13 @@
 %
 \documentclass[fleqn, twoside]{article}
 
-\setcounter{section}{1} 												% Set the Unit Number (without Leading 0's)
+\setcounter{section}{1} 											% Set the Unit Number (without Leading 0's)
 \newcommand{\coursetitle}{AS Pure Mathematics (Year 1)}				% Set the Course Title
 \newcommand{\bookletunittitle}{Algebraic expressions}				% Set the Unit Title
 \newcommand{\bookletsubtitle}{{\rmfamily\LaTeX} Template created by: Ellis Dickinson}	% Set the Subtitle
 
 \input{components/preamble}
+
 
 
 
@@ -38,11 +39,9 @@
 % TODO Links to the Big Picture
 \begin{mybox2}[colbacktitle=WildStrawberry]{Links to the Big Picture}
 	\begin{enumerate}[label*=P\arabic*., leftmargin=*]
-		\setlength{\itemsep}{-2pt}%
 		\setcounter{enumi}{\getcurrentref{section}-1}
-	 	\item \textbf{\bookletunittitle} \vspace{-2mm}
+	 	\item \textbf{\bookletunittitle}
 	 	\begin{enumerate}[label*=\arabic*]
-		 	\setlength{\itemsep}{0pt}%
 		    \item Index Laws
 		    \item Expanding Brackets
 		    \item Factorising
@@ -52,18 +51,14 @@
 	 	\end{enumerate}
 	\end{enumerate}
     \begin{tabularx}{\dimexpr\textwidth}{X@{\hskip6pt}X}
-	    {\sffamily
+	    {
 		    Develops:
-		    \vspace{-2mm}
 			\begin{itemize}
-				\setlength{\itemsep}{-2pt}%
 				\item GCSE algebraic manipulation
 			\end{itemize}
-		} & {\sffamily
+		} & {
 			Leads to:
-			\vspace{-2mm}
 			\begin{itemize}
-				\setlength{\itemsep}{-2pt}%
 				\item P2 -- Quadratics
 				\item P6 -- Algebraic Methods
 				\item P9 -- Integration
