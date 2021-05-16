@@ -16,6 +16,7 @@
 \usepackage{tasks}
 \usepackage{anyfontsize}
 \usepackage[export]{adjustbox}		% http://ctan.org/pkg/adjustbox
+\usepackage{bookmark}
 
 
 
@@ -35,6 +36,7 @@
 }
 
 
+\newcommand*\makeAlph[1]{\symbol{\numexpr96+#1}}
 
 % Define dynamic titlebars for sections/exercises
 \newlength{\sectionnumberwidth}
@@ -61,17 +63,17 @@
 	\tikz[baseline, trim right=3.1cm] {
 		\settowidth{\sectionnumberwidth}{
 			\pgfinterruptpicture
-				\textbf{\sffamily\thesection.\thesubsubsection}
+				\bfseries{\sffamily\thesection\thesubsubsection}
 			\endpgfinterruptpicture
 		}
-	    \fill [red!25, rounded corners=0.15cm] (2.5cm,-1.265ex) rectangle (\textwidth-\sectionnumberwidth+2.65cm,2.64ex);
+	    \fill [red!25, rounded corners=0.15cm] (2.5cm,-1.22ex) rectangle (\textwidth-\sectionnumberwidth+2.65cm,2.67ex);
 	    \node [
 	        fill=cherryred!80!white,
 	        text=white,
-	        anchor= base east,
+	        anchor= south east,
 	        rounded rectangle,
 	        inner sep = 2mm,
-	        minimum height=3.9ex] at (3cm,0) {
+	        minimum height=3.9ex] at (2.6cm,-2.62mm) {
 	        {\bfseries\thesection\thesubsubsection}
 	    };
 	}
@@ -169,6 +171,7 @@
 	\setlength\belowdisplayskip{7pt}
 	%\setlength{\belowdisplayshortskip}{0pt}
 }
+\AtEndEnvironment{tabularx}{\vspace{-4mm}}
 
 
 \setsansfont{AptiferSansPro}[
@@ -185,7 +188,12 @@
 \titleformat{\subsection}{\large\sffamily}{\titlebar}{0.1cm}{}
 \titleformat{\subsubsection}{\large\sffamily}{\exercisebar}{0.1cm}{}
 
-
+\newcommand{\fakesubsection}[1]{%
+  \par\refstepcounter{subsection}% Increase subsection counter
+  \subsectionmark{#1}% Add subsection mark (header)
+  \addcontentsline{toc}{subsection}{\protect\numberline{\thesubsection}#1}% Add subsection to ToC
+  % Add more content here, if needed.
+}
 
 % Define the easier get functions for sections and subsections
 \renewcommand*{\thesection}{\arabic{section}}
@@ -203,8 +211,8 @@
 %Custom font size 'YUGE', larger than huge
 \newcommand\YUGE{\fontsize{35}{35}\selectfont}
 
-% Define custom footer
-\fancypagestyle{plain}{
+% Define custom footers
+\fancypagestyle{branded}{
 	\fancyhf{} % clear all header and footer fields
 	\fancyfoot[OC]{ %right hand side
 		\vspace{-0.7em}
@@ -238,7 +246,18 @@
 	\renewcommand{\headrulewidth}{0pt}
 	\renewcommand{\footrulewidth}{0pt}
 }
-\pagestyle{plain}
+\fancypagestyle{plain}{
+	\fancyhf{} % clear all header and footer fields
+	\fancyfoot[OC]{ %right hand side
+		\hfill\sffamily\raggedright\getcurrentref{page}
+	}
+	\fancyfoot[EC]{ %left hand side
+		\sffamily\raggedright \getcurrentref{page}
+	}
+
+	\renewcommand{\headrulewidth}{0pt}
+	\renewcommand{\footrulewidth}{0pt}
+}
 
 
 
