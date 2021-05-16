@@ -15,7 +15,7 @@
 \newcommand{\bookletsubtitle}{{\rmfamily\LaTeX} Template created by: Ellis Dickinson}	% Set the Subtitle
 
 \input{components/preamble}
-
+\usepackage{lipsum}
 
 \begin{document}
 
@@ -29,10 +29,10 @@
 
 % TODO Links to the Big Picture
 \begin{mybox2}[colbacktitle=WildStrawberry]{Links to the Big Picture}
-	\begin{enumerate}[label*=P\arabic*., leftmargin=*]
+	\begin{enumerate}[label*=\bfseries P\arabic*., leftmargin=*]
 		\setcounter{enumi}{\getcurrentref{section}-1}
 	 	\item \textbf{\bookletunittitle}
-	 	\begin{enumerate}[label*=\arabic*]
+	 	\begin{enumerate}[label*=\bfseries\arabic*]
 		    \item Index Laws
 		    \item Expanding Brackets
 		    \item Factorising
@@ -69,22 +69,16 @@
 \end{note*}
 
 \newpage
+\pagestyle{branded}
 \subsection{Content}
 
 \fakesubsection{Exercises}
+\exercise{Exercise 1A}
 
+\newpage
 
-\newpage
-\pagestyle{branded}
-f
-\newpage
-f
-\newpage
-f
-\newpage
-f
-\newpage
-f
+\lipsum[2-30]
+
 
 
 
