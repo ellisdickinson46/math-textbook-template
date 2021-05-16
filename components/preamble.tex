@@ -178,8 +178,22 @@
 	Path = fonts/,
 	Extension = .ttf,
     UprightFont = *-Regular,
-    BoldFont = *-Medium
+    BoldFont = *-Semibold,
+    FontFace = {l}{n}{*-Light},
+	FontFace = {l}{it}{*-LightItalic},
+	FontFace = {sb}{n}{*-Medium},
+	FontFace = {sb}{it}{*-MediumItalic},
+	FontFace = {eb}{n}{*-Black},
+	FontFace = {eb}{it}{*-BlackItalic},
 ]
+
+\DeclareRobustCommand{\sbseries}{\fontseries{sb}\selectfont}
+\DeclareTextFontCommand{\textsb}{\sbseries}
+\DeclareRobustCommand{\ebseries}{\fontseries{eb}\selectfont}
+\DeclareTextFontCommand{\texteb}{\ebseries}
+\DeclareRobustCommand{\ltseries}{\fontseries{l}\selectfont}
+\DeclareTextFontCommand{\textlt}{\ltseries}
+
 
 
 
