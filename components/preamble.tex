@@ -171,7 +171,15 @@
 	\setlength\belowdisplayskip{7pt}
 	%\setlength{\belowdisplayshortskip}{0pt}
 }
+
+
 \AtEndEnvironment{tabularx}{\vspace{-4mm}}
+
+
+\newcommand{\Sum} [2] {\the\numexpr #1 + #2 \relax \\}
+\AtBeginEnvironment{examplebox}{
+	\fakesubsubsection{Example \Sum{\number\value{tcb@cnt@examplebox}}{1} }
+}
 
 
 \setsansfont{AptiferSansPro}[
@@ -179,6 +187,7 @@
 	Extension = .ttf,
     UprightFont = *-Regular,
     BoldFont = *-Semibold,
+    BoldItalicFont = *-SemiboldItalic,
     FontFace = {l}{n}{*-Light},
 	FontFace = {l}{it}{*-LightItalic},
 	FontFace = {sb}{n}{*-Medium},
@@ -186,7 +195,6 @@
 	FontFace = {eb}{n}{*-Black},
 	FontFace = {eb}{it}{*-BlackItalic},
 ]
-
 \DeclareRobustCommand{\sbseries}{\fontseries{sb}\selectfont}
 \DeclareTextFontCommand{\textsb}{\sbseries}
 \DeclareRobustCommand{\ebseries}{\fontseries{eb}\selectfont}
@@ -208,6 +216,12 @@
   \addcontentsline{toc}{subsection}{\protect\numberline{\thesubsection}#1}% Add subsection to ToC
   % Add more content here, if needed.
 }
+\newcommand{\fakesubsubsection}[1]{%
+  \par\refstepcounter{subsubsection}% Increase subsection counter
+  \subsectionmark{#1}% Add subsection mark (header)
+  \addcontentsline{toc}{subsubsection}{\protect\numberline{\thesubsubsection}#1}% Add subsection to ToC
+  % Add more content here, if needed.
+}
 
 % Define the easier get functions for sections and subsections
 \renewcommand*{\thesection}{\arabic{section}}
@@ -218,8 +232,8 @@
   {??}
   {\the\value{#1}}%
 }
-\newcommand{\exercise}{\subsubsection}
-
+%\newcommand{\exercise}{\subsubsection}
+\newcommand{\exercise}[1]{\subsubsection{Exercise \thesection\thesubsubsection {\footnotesize {\hspace{4mm}}#1}}}
 
 
 %Custom font size 'YUGE', larger than huge
