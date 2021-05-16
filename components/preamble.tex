@@ -163,10 +163,12 @@
 \setlist[enumerate]{topsep=-2pt, partopsep=4mm, itemsep=0pt}
 
 % Change spacing of aligned mathematics
-\setlength{\abovedisplayskip}{3pt}
-%\setlength{\belowdisplayskip}{0pt}
-\setlength{\abovedisplayshortskip}{3pt}
-%\setlength{\belowdisplayshortskip}{0pt}
+\AtBeginDocument{
+	\setlength\abovedisplayskip{3pt}
+	%\setlength{\belowdisplayskip}{0pt}
+	\setlength\belowdisplayskip{7pt}
+	%\setlength{\belowdisplayshortskip}{0pt}
+}
 
 
 \setsansfont{AptiferSansPro}[
