@@ -1,3 +1,6 @@
+![CI Workflow](https://github.com/ellisdickinson46/math-textbook-template/actions/workflows/main.yml/badge.svg)
+
+
 # Maths Textbook-style Template
 
 ## Getting started
