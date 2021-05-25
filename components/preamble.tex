@@ -108,7 +108,7 @@
     before upper = \sffamily,
     #1
 }
-          
+
 \tcbset{%
     example/.style={%
         enhanced,
@@ -128,11 +128,11 @@
         rounded corners,
         toprule=0pt, rightrule=0pt, bottomrule=0pt, leftrule=1mm,
         colback=#1!5, colframe=#1!80!black, coltitle=#1!80!black,
-        fonttitle=\sbseries\large,
+        fonttitle=\sbseries\large\sffamily,
         detach title,
-        before upper={\sffamily\tcbtitle\quad\hspace{-2mm}},
+        before upper={\tcbtitle\quad\sffamily},
         fontupper=\linespread{1.2}\selectfont
-    }
+    },
 }
 \newtcbtheorem[auto counter]{examplebox}{Example}
 {example=blue}{ex}
@@ -286,8 +286,17 @@
 	\renewcommand{\headrulewidth}{0pt}
 	\renewcommand{\footrulewidth}{0pt}
 }
-
-
+\fancypagestyle{attribution}{
+	\fancyhf{} % clear all header and footer fields
+	\fancyfoot[L]{ %left hand side
+		\vspace{-3.0em}\color{separatorgray}\small\sffamily
+		\bookletsubtitle \\
+		{\rmfamily{\LaTeX}} Template created by: Ellis Dickinson \\
+		Document compiled on: \today
+	}
+	\renewcommand{\headrulewidth}{0pt}
+	\renewcommand{\footrulewidth}{0pt}
+}
 
 % Function for adding vspace above underbrace
 \newcommand*\addunderbracespace[1]{\vrule width0pt height0pt depth#1\relax}
