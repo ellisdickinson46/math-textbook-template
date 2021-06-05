@@ -3,7 +3,9 @@
 \usepackage[dvipsnames]{xcolor}
 \usepackage[a4paper, portrait, margin=1.9cm]{geometry}
 \usepackage{titlesec}
-\usepackage{tikz}\usetikzlibrary{shapes.misc}\usetikzlibrary{calc}
+\usepackage{tikz}
+	\usetikzlibrary{shapes.misc}
+	\usetikzlibrary{calc}
 \usepackage{setspace}
 \usepackage{fontspec}
 \usepackage[most]{tcolorbox}
@@ -19,7 +21,7 @@
 \usepackage{bookmark}
 
 
-
+\input{components/themes}
 
 \newcounter{taskscounter}
 \settasks{							% Multi-column enumeration
@@ -47,9 +49,9 @@
 				\textbf{\sffamily\thesection.\thesubsection}
 			\endpgfinterruptpicture
 		}
-	    \fill [cyan!25, rounded corners=0.15cm] (2.5cm,-1.28ex) rectangle (\textwidth-\sectionnumberwidth+2.65cm,2.615ex);
+	    \fill [primarythemecol!30!white, rounded corners=0.15cm] (2.5cm,-1.28ex) rectangle (\textwidth-\sectionnumberwidth+2.65cm,2.615ex);
 	    \node [
-	        fill=blue!60!white,
+	        fill=primarythemecol,
 	        text=white,
 	        anchor= base east,
 	        rounded rectangle,
@@ -110,7 +112,7 @@
 }
 
 \tcbset{%
-    example/.style={%
+    sidebarwithnum/.style={%
         enhanced,
         breakable,
         rounded corners,
@@ -121,7 +123,7 @@
         before upper={\tcbtitle\quad},
         fontupper=\linespread{1.2}\selectfont
     },
-    note/.style={%
+    sidebarwithoutnum/.style={%
         enhanced,
         breakable,
         separator sign none,
@@ -135,11 +137,11 @@
     },
 }
 \newtcbtheorem[auto counter]{examplebox}{Example}
-{example=blue}{ex}
+{sidebarwithnum=primarythemecol}{ex}
 \newtcbtheorem{practice}{Independent Practice}
-{example=practiceorange}{pr}
+{sidebarwithnum=practiceorange}{pr}
 \newtcbtheorem{note}{#1\hspace{-1mm}}
-{note=notecolor}{nt}
+{sidebarwithoutnum=notecolor}{nt}
 
 
 
@@ -300,6 +302,11 @@
 
 % Function for adding vspace above underbrace
 \newcommand*\addunderbracespace[1]{\vrule width0pt height0pt depth#1\relax}
+
+% Define custom struts for aligning square
+% #1 the height, #2 the depth
+% Credit: https://tex.stackexchange.com/questions/14602/set-strut-height
+\def\mystrut(#1,#2){\vrule height #1pt depth #2pt width 0pt}
 
 
 \newcommand{\formattedunittitle}{Unit P\getcurrentref{section}}
