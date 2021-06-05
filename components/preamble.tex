@@ -3,7 +3,9 @@
 \usepackage[dvipsnames]{xcolor}
 \usepackage[a4paper, portrait, margin=1.9cm]{geometry}
 \usepackage{titlesec}
-\usepackage{tikz}\usetikzlibrary{shapes.misc}\usetikzlibrary{calc}
+\usepackage{tikz}
+	\usetikzlibrary{shapes.misc}
+	\usetikzlibrary{calc}
 \usepackage{setspace}
 \usepackage{fontspec}
 \usepackage[most]{tcolorbox}
@@ -19,7 +21,7 @@
 \usepackage{bookmark}
 
 
-
+\input{components/themes}
 
 \newcounter{taskscounter}
 \settasks{							% Multi-column enumeration
@@ -47,9 +49,9 @@
 				\textbf{\sffamily\thesection.\thesubsection}
 			\endpgfinterruptpicture
 		}
-	    \fill [cyan!25, rounded corners=0.15cm] (2.5cm,-1.28ex) rectangle (\textwidth-\sectionnumberwidth+2.65cm,2.615ex);
+	    \fill [primarythemecol!30!white, rounded corners=0.15cm] (2.5cm,-1.28ex) rectangle (\textwidth-\sectionnumberwidth+2.65cm,2.615ex);
 	    \node [
-	        fill=blue!60!white,
+	        fill=primarythemecol,
 	        text=white,
 	        anchor= base east,
 	        rounded rectangle,
@@ -108,9 +110,9 @@
     before upper = \sffamily,
     #1
 }
-          
+
 \tcbset{%
-    example/.style={%
+    sidebarwithnum/.style={%
         enhanced,
         breakable,
         rounded corners,
@@ -121,25 +123,25 @@
         before upper={\tcbtitle\quad},
         fontupper=\linespread{1.2}\selectfont
     },
-    note/.style={%
+    sidebarwithoutnum/.style={%
         enhanced,
         breakable,
         separator sign none,
         rounded corners,
         toprule=0pt, rightrule=0pt, bottomrule=0pt, leftrule=1mm,
         colback=#1!5, colframe=#1!80!black, coltitle=#1!80!black,
-        fonttitle=\sbseries\large,
+        fonttitle=\sbseries\large\sffamily,
         detach title,
-        before upper={\sffamily\tcbtitle\quad\hspace{-2mm}},
+        before upper={\tcbtitle\quad\sffamily},
         fontupper=\linespread{1.2}\selectfont
-    }
+    },
 }
 \newtcbtheorem[auto counter]{examplebox}{Example}
-{example=blue}{ex}
+{sidebarwithnum=primarythemecol}{ex}
 \newtcbtheorem{practice}{Independent Practice}
-{example=practiceorange}{pr}
+{sidebarwithnum=practiceorange}{pr}
 \newtcbtheorem{note}{#1\hspace{-1mm}}
-{note=notecolor}{nt}
+{sidebarwithoutnum=notecolor}{nt}
 
 
 
@@ -148,9 +150,9 @@
 \definecolor{notecolor}{RGB}{0, 0, 0}
 \definecolor{cherryred}{RGB}{191,0,0}
 
-\definecolor{ehclogoblue}{RGB}{0,187,211}
-\definecolor{ehclogogray}{RGB}{33, 34, 33}
-\definecolor{ehclogoorange}{RGB}{243, 108, 33}
+\definecolor{ehclogoblue}{RGB}{0,191,214}
+\definecolor{ehclogogray}{RGB}{34, 34, 34}
+\definecolor{ehclogoorange}{RGB}{255, 107, 0}
 \definecolor{separatorgray}{RGB}{210, 210, 210}
 
 
@@ -286,11 +288,25 @@
 	\renewcommand{\headrulewidth}{0pt}
 	\renewcommand{\footrulewidth}{0pt}
 }
-
-
+\fancypagestyle{attribution}{
+	\fancyhf{} % clear all header and footer fields
+	\fancyfoot[L]{ %left hand side
+		\vspace{-3.0em}\color{separatorgray}\small\sffamily
+		\bookletsubtitle \\
+		{\rmfamily{\LaTeX}} Template created by: Ellis Dickinson \\
+		Document compiled on: \today
+	}
+	\renewcommand{\headrulewidth}{0pt}
+	\renewcommand{\footrulewidth}{0pt}
+}
 
 % Function for adding vspace above underbrace
 \newcommand*\addunderbracespace[1]{\vrule width0pt height0pt depth#1\relax}
+
+% Define custom struts for aligning square
+% #1 the height, #2 the depth
+% Credit: https://tex.stackexchange.com/questions/14602/set-strut-height
+\def\mystrut(#1,#2){\vrule height #1pt depth #2pt width 0pt}
 
 
 \newcommand{\formattedunittitle}{Unit P\getcurrentref{section}}
