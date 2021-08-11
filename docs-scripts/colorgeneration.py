@@ -79,7 +79,7 @@ colorsFourthCol = {
 }
 
 def generateLink(colorCode):
-    return f"![](http://via.placeholder.com/80x40/{colorCode}/ffffff&text=%20)"
+    return f"![](http://via.placeholder.com/80x40/{colorCode}/{colorCode})"
 
 
 for x in range(0, 17):
