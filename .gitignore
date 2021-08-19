@@ -19,8 +19,8 @@ Thumbs.db
 
 # Compiled PDF Files
 *.pdf
-!ehc-logo-vector.pdf
-!ehc-brand-separator-icon.pdf
+!brand-logo-vector.pdf
+!brand-separator-icon.pdf
 *.aux
 *.log
 *.gz
