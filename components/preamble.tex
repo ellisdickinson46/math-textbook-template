@@ -1,11 +1,11 @@
 % DO NOT MODIFY THIS FIILE
 % ----------------------------------------------
-\usepackage[dvipsnames]{xcolor}
-\usepackage[a4paper, portrait, margin=1.9cm]{geometry}
+\usepackage[dvipsnames, table]{xcolor}
+\usepackage[a4paper, portrait, margin=2cm, top=1.8cm, left=1.8cm, bottom=2cm]{geometry}
 \usepackage{titlesec}
 \usepackage{tikz}
-	\usetikzlibrary{shapes.misc}
-	\usetikzlibrary{calc}
+    \usetikzlibrary{shapes.misc}
+    \usetikzlibrary{calc}
 \usepackage{setspace}
 \usepackage{fontspec}
 \usepackage[most]{tcolorbox}
@@ -17,80 +17,110 @@
 \usepackage{mathtools}
 \usepackage{tasks}
 \usepackage{anyfontsize}
-\usepackage[export]{adjustbox}		% http://ctan.org/pkg/adjustbox
+\usepackage[export]{adjustbox}          % http://ctan.org/pkg/adjustbox
 \usepackage{bookmark}
+
 
 
 \input{components/themes}
 
+
+
+% Multi-column enumeration
 \newcounter{taskscounter}
-\settasks{							% Multi-column enumeration
-	style=enumerate,
-	counter=taskscounter,
-	label-width={22pt},
-	item-indent={15pt},
-	label-align=right,
-	label=\textbf{\alph*},
-	before-skip = -\parskip , 		% undo paragraph skip
-  	after-skip = -\parskip , 		% undo paragraph skip
-  	after-item-skip = -\parskip+1mm	% undo paragraph skip
-%   debug=true 						% useful for fine-tuning or debugging
+\settasks{
+    style=enumerate,
+    counter=taskscounter,
+    label-width={22pt},
+    item-indent={15pt},
+    label-align=right,
+    label=\textbf{\alph*},
+    before-skip = -\parskip ,           % undo paragraph skip
+    after-skip = -\parskip ,            % undo paragraph skip
+    after-item-skip = -\parskip+1mm     % undo paragraph skip
+%   debug=true                          % useful for fine-tuning or debugging
 }
 
 
-\newcommand*\makeAlph[1]{\symbol{\numexpr96+#1}}
+
 
 % Define dynamic titlebars for sections/exercises
+% Heavily modified from a post on StackExchange
+% https://tex.stackexchange.com/questions/34288/how-to-place-a-shaded-box-around-a-section-label-and-name
 \newlength{\sectionnumberwidth}
 \newcommand\titlebar{\hspace*{-0.1cm}
-	\tikz[baseline, trim right=3.1cm] {
-		\settowidth{\sectionnumberwidth}{
-			\pgfinterruptpicture
-				\textbf{\sffamily\thesection.\thesubsection}
-			\endpgfinterruptpicture
-		}
-	    \fill [primarythemecol!30!white, rounded corners=0.15cm] (2.5cm,-1.28ex) rectangle (\textwidth-\sectionnumberwidth+2.65cm,2.615ex);
-	    \node [
-	        fill=primarythemecol,
-	        text=white,
-	        anchor= base east,
-	        rounded rectangle,
-	        inner sep = 2mm,
-	        minimum height=3.89ex] at (3cm,0) {
-	        {\bfseries\thesection.\thesubsection}
-	    };
-	}
+    \tikz[baseline, trim right=3.1cm] {
+        \settowidth{\sectionnumberwidth}{
+            \pgfinterruptpicture
+                \textbf{\sffamily\thesection.\thesubsection}
+            \endpgfinterruptpicture
+        }
+        \fill [primarythemecol!30!white, rounded corners=0.15cm] (2.5cm,-1.28ex) rectangle (\textwidth-\sectionnumberwidth+2.65cm,2.615ex);
+        \node [
+            fill=primarythemecol,
+            text=white,
+            anchor= base east,
+            rounded rectangle,
+            inner sep = 2mm,
+            minimum height=3.89ex] at (3cm,0) {
+            {\bfseries\thesection.\thesubsection}
+        };
+    }
 }
 \newcommand\exercisebar{\hspace*{-0.1cm}
-	\tikz[baseline, trim right=3.1cm] {
-		\settowidth{\sectionnumberwidth}{
-			\pgfinterruptpicture
-				\bfseries{\sffamily\thesection\thesubsubsection}
-			\endpgfinterruptpicture
-		}
-	    \fill [red!25, rounded corners=0.15cm] (2.5cm,-1.22ex) rectangle (\textwidth-\sectionnumberwidth+2.65cm,2.67ex);
-	    \node [
-	        fill=cherryred!80!white,
-	        text=white,
-	        anchor= south east,
-	        rounded rectangle,
-	        inner sep = 2mm,
-	        minimum height=3.9ex] at (2.6cm,-2.62mm) {
-	        {\bfseries\thesection\thesubsubsection}
-	    };
-	}
+    \tikz[baseline, trim right=3.1cm] {
+        \settowidth{\sectionnumberwidth}{
+            \pgfinterruptpicture
+                \bfseries{\sffamily\thesection\thesubsubsection}
+            \endpgfinterruptpicture
+        }
+        \fill [red!25, rounded corners=0.15cm] (2.5cm,-1.22ex) rectangle (\textwidth-\sectionnumberwidth+2.65cm,2.67ex);
+        \node [
+            fill=cherryred!80!white,
+            text=white,
+            anchor= south east,
+            rounded rectangle,
+            inner sep = 2mm,
+            minimum height=3.9ex] at (2.6cm,-2.62mm) {
+            {\bfseries\thesection\thesubsubsection}
+        };
+    }
 }
 
+% Implement the custom titlebars
+\titleformat{\section}{\large\sffamily}{\titlebar}{0.1cm}{}
+\titleformat{\subsection}{\large\sffamily}{\titlebar}{0.1cm}{}
+\titleformat{\subsubsection}{\large\sffamily}{\exercisebar}{0.1cm}{}
+
+% Define phantom subsections/subsubsections
+\newcommand{\fakesubsection}[1]{%
+  \par\refstepcounter{subsection}    % Increase subsection counter
+  \subsectionmark{#1}                % Add subsection mark (header)
+  \addcontentsline{toc}{subsection}{\protect\numberline{\thesubsection}#1}% Add subsection to ToC
+  % Add more content here, if needed.
+}
+\newcommand{\fakesubsubsection}[1]{%
+  \par\refstepcounter{subsubsection}    % Increase subsection counter
+  \subsectionmark{#1}                   % Add subsection mark (header)
+  \addcontentsline{toc}{subsubsection}{\protect\numberline{\thesubsubsection}#1}% Add subsection to ToC
+  % Add more content here, if needed.
+}
+
+
+
+
+% Modified from Section 10.2.3 of tcolorbox manual, found here:
+% https://mirror.ox.ac.uk/sites/ctan.org/macros/latex/contrib/tcolorbox/tcolorbox.pdf
 \newtcolorbox{mybox2}[2][]{
-	enhanced,
-	before skip=2mm,after skip=2mm,
-	colback=black!5,
-	colframe=black!50,
-	boxrule=0.2mm,
-	attach boxed title to top left={
-		xshift=1cm,yshift*=1mm-\tcboxedtitleheight},
-		varwidth boxed title*=-3cm,
-		boxed title style={frame code={
+    enhanced,
+    before skip=2mm,after skip=2mm,
+    colback=black!5,
+    colframe=black!50,
+    boxrule=0.2mm,
+    attach boxed title to top left={
+        xshift=1cm,yshift*=1mm-\tcboxedtitleheight},
+        varwidth boxed title*=-3cm,
+        boxed title style={frame code={
             \path[fill=tcbcolback!30!black]
               ([yshift=-1mm,xshift=-1mm]frame.north west)
                 arc[start angle=0,end angle=180,radius=1mm]
@@ -105,11 +135,14 @@
               [sharp corners]-- cycle;
             },interior engine=empty,
           },
-	fonttitle=\sffamily\bfseries,
+    fonttitle=\sffamily\bfseries,
     title={#2},
     before upper = \sffamily,
     #1
 }
+
+
+
 
 \tcbset{%
     sidebarwithnum/.style={%
@@ -117,8 +150,8 @@
         breakable,
         rounded corners,
         toprule=0pt, rightrule=0pt, bottomrule=0pt, leftrule=1mm,
-        colback=#1!5, colframe=#1!80!black, coltitle=#1!80!black,
-        fonttitle=\sbseries\large\sffamily,
+        colback=#1!5, colframe=#1!90!black, coltitle=#1!90!black,
+        fonttitle=\large\sffamily\sbseries,
         detach title,
         before upper={\tcbtitle\quad},
         fontupper=\linespread{1.2}\selectfont
@@ -130,7 +163,7 @@
         rounded corners,
         toprule=0pt, rightrule=0pt, bottomrule=0pt, leftrule=1mm,
         colback=#1!5, colframe=#1!80!black, coltitle=#1!80!black,
-        fonttitle=\sbseries\large\sffamily,
+        fonttitle=\large\sffamily\sbseries,
         detach title,
         before upper={\tcbtitle\quad\sffamily},
         fontupper=\linespread{1.2}\selectfont
@@ -142,6 +175,7 @@
 {sidebarwithnum=practiceorange}{pr}
 \newtcbtheorem{note}{#1\hspace{-1mm}}
 {sidebarwithoutnum=notecolor}{nt}
+
 
 
 
@@ -157,10 +191,13 @@
 
 
 
-\setstretch{1.1} 										% Globally adjust bullet spacing
-\setlength{\parindent}{0cm} 								% Removes paragraph indent
-\setlength{\multicolsep}{6.0pt plus 2.0pt minus 1.5pt}	% Halves whitespace before multicol environment
-\setlength\tabcolsep{0pt} 								% Removes default space between columns in table
+
+% Changing various spacings
+% ----------------------------------------------
+\setstretch{1.1}                                            % Globally adjust bullet spacing
+\setlength{\parindent}{0cm}                                 % Removes paragraph indent
+\setlength{\multicolsep}{6.0pt plus 2.0pt minus 1.5pt}      % Halves whitespace before multicol environment
+\setlength\tabcolsep{0pt}                                   % Removes default space between columns in table
 
 % Change various spacings of bulleted/numbered lists
 \setlist[itemize]{topsep=2pt, itemsep=-2pt}
@@ -168,34 +205,43 @@
 
 % Change spacing of aligned mathematics
 \AtBeginDocument{
-	\setlength\abovedisplayskip{3pt}
-	%\setlength{\belowdisplayskip}{0pt}
-	\setlength\belowdisplayskip{7pt}
-	%\setlength{\belowdisplayshortskip}{0pt}
+    \setlength\abovedisplayskip{3pt}
+    %\setlength{\belowdisplayskip}{0pt}
+    \setlength\belowdisplayskip{7pt}
+    %\setlength{\belowdisplayshortskip}{0pt}
 }
-
 
 \AtEndEnvironment{tabularx}{\vspace{-4mm}}
 
-
 \newcommand{\Sum} [2] {\the\numexpr #1 + #2 \relax \\}
 \AtBeginEnvironment{examplebox}{
-	\fakesubsubsection{Example \Sum{\number\value{tcb@cnt@examplebox}}{1} }
+    \fakesubsubsection{Example \Sum{\number\value{tcb@cnt@examplebox}}{1} }
 }
 
+% Function for adding vspace above underbrace
+\newcommand*\addunderbracespace[1]{\vrule width0pt height0pt depth#1\relax}
 
+% Define custom struts for aligning square
+% #1 the height, #2 the depth
+% Credit: https://tex.stackexchange.com/questions/14602/set-strut-height
+\def\mystrut(#1,#2){\vrule height #1pt depth #2pt width 0pt}
+
+
+
+
+% Custom textbook font definitions
 \setsansfont{AptiferSansPro}[
-	Path = fonts/,
-	Extension = .ttf,
+    Path = fonts/,
+    Extension = .ttf,
     UprightFont = *-Regular,
     BoldFont = *-Semibold,
     BoldItalicFont = *-SemiboldItalic,
     FontFace = {l}{n}{*-Light},
-	FontFace = {l}{it}{*-LightItalic},
-	FontFace = {sb}{n}{*-Medium},
-	FontFace = {sb}{it}{*-MediumItalic},
-	FontFace = {eb}{n}{*-Black},
-	FontFace = {eb}{it}{*-BlackItalic},
+    FontFace = {l}{it}{*-LightItalic},
+    FontFace = {sb}{n}{*-Medium},
+    FontFace = {sb}{it}{*-MediumItalic},
+    FontFace = {eb}{n}{*-Black},
+    FontFace = {eb}{it}{*-BlackItalic},
 ]
 \DeclareRobustCommand{\sbseries}{\fontseries{sb}\selectfont}
 \DeclareTextFontCommand{\textsb}{\sbseries}
@@ -207,23 +253,8 @@
 
 
 
-% Implement the custom titlebars
-\titleformat{\section}{\large\sffamily}{\titlebar}{0.1cm}{}
-\titleformat{\subsection}{\large\sffamily}{\titlebar}{0.1cm}{}
-\titleformat{\subsubsection}{\large\sffamily}{\exercisebar}{0.1cm}{}
 
-\newcommand{\fakesubsection}[1]{%
-  \par\refstepcounter{subsection}% Increase subsection counter
-  \subsectionmark{#1}% Add subsection mark (header)
-  \addcontentsline{toc}{subsection}{\protect\numberline{\thesubsection}#1}% Add subsection to ToC
-  % Add more content here, if needed.
-}
-\newcommand{\fakesubsubsection}[1]{%
-  \par\refstepcounter{subsubsection}% Increase subsection counter
-  \subsectionmark{#1}% Add subsection mark (header)
-  \addcontentsline{toc}{subsubsection}{\protect\numberline{\thesubsubsection}#1}% Add subsection to ToC
-  % Add more content here, if needed.
-}
+
 
 % Define the easier get functions for sections and subsections
 \renewcommand*{\thesection}{\arabic{section}}
@@ -238,75 +269,73 @@
 \newcommand{\exercise}[1]{\subsubsection{Exercise \thesection\thesubsubsection {\footnotesize {\hspace{4mm}}#1}}}
 
 
-%Custom font size 'YUGE', larger than huge
+% Custom font size 'YUGE', larger than huge
 \newcommand\YUGE{\fontsize{35}{35}\selectfont}
 
-% Define custom footers
-\fancypagestyle{branded}{
-	\fancyhf{} % clear all header and footer fields
-	\fancyfoot[OC]{ %right hand side
-		\vspace{-0.7em}
-		\hfill {\sffamily\raggedright {\color{separatorgray}\getcurrentref{page}} \\}\vspace{-1.6em}
-		\begin{minipage}{.3\linewidth}
-			\color{separatorgray}\rule{\linewidth}{0.4pt}
-		\end{minipage}
-		\begin{minipage}{.1\linewidth}
-			\centering
-			\includegraphics[scale=0.4]{images/ehc-brand-separator-icon}
-		\end{minipage}
-		\begin{minipage}{.3\linewidth}
-			\color{separatorgray}\rule{\linewidth}{0.4pt}
-		\end{minipage}
-	}
-	\fancyfoot[EC]{ %left hand side
-		\vspace{-0.7em}
-		{\sffamily\raggedright {\color{separatorgray}\getcurrentref{page}} \\}\vspace{-1.6em}
-		\begin{minipage}{.3\linewidth}
-			\color{separatorgray}\rule{\linewidth}{0.4pt}
-		\end{minipage}
-		\begin{minipage}{.1\linewidth}
-			\centering
-			\includegraphics[scale=0.4]{images/ehc-brand-separator-icon}
-		\end{minipage}
-		\begin{minipage}{.3\linewidth}
-			\color{separatorgray}\rule{\linewidth}{0.4pt}
-		\end{minipage}
-	}
 
-	\renewcommand{\headrulewidth}{0pt}
-	\renewcommand{\footrulewidth}{0pt}
+
+
+% Custom Footer Definitions
+% ----------------------------------------------
+\fancypagestyle{branded}{
+    \fancyhf{} % clear all header and footer fields
+    \fancyfoot[OC]{ %right hand side (odd pages)
+        \vspace{-0.7em}
+        \hfill {\sffamily\raggedright {\color{separatorgray}\getcurrentref{page}} \\}\vspace{-1.6em}
+        \begin{minipage}{.3\linewidth}
+            \color{separatorgray}\rule{\linewidth}{0.4pt}
+        \end{minipage}
+        \begin{minipage}{.1\linewidth}
+            \centering
+            \includegraphics[scale=0.4]{images/ehc-brand-separator-icon}
+        \end{minipage}
+        \begin{minipage}{.3\linewidth}
+            \color{separatorgray}\rule{\linewidth}{0.4pt}
+        \end{minipage}
+    }
+    \fancyfoot[EC]{ %left hand side (even pages)
+        \vspace{-0.7em}
+        {\sffamily\raggedright {\color{separatorgray}\getcurrentref{page}} \\}\vspace{-1.6em}
+        \begin{minipage}{.3\linewidth}
+            \color{separatorgray}\rule{\linewidth}{0.4pt}
+        \end{minipage}
+        \begin{minipage}{.1\linewidth}
+            \centering
+            \includegraphics[scale=0.4]{images/ehc-brand-separator-icon}
+        \end{minipage}
+        \begin{minipage}{.3\linewidth}
+            \color{separatorgray}\rule{\linewidth}{0.4pt}
+        \end{minipage}
+    }
+
+    \renewcommand{\headrulewidth}{0pt}
+    \renewcommand{\footrulewidth}{0pt}
 }
 \fancypagestyle{plain}{
-	\fancyhf{} % clear all header and footer fields
-	\fancyfoot[OC]{ %right hand side
-		\hfill\sffamily\raggedright\getcurrentref{page}
-	}
-	\fancyfoot[EC]{ %left hand side
-		\sffamily\raggedright \getcurrentref{page}
-	}
+    \fancyhf{} % clear all header and footer fields
+    \fancyfoot[OC]{ %right hand side
+        \hfill\sffamily\raggedright\getcurrentref{page}
+    }
+    \fancyfoot[EC]{ %left hand side
+        \sffamily\raggedright \getcurrentref{page}
+    }
 
-	\renewcommand{\headrulewidth}{0pt}
-	\renewcommand{\footrulewidth}{0pt}
+    \renewcommand{\headrulewidth}{0pt}
+    \renewcommand{\footrulewidth}{0pt}
 }
 \fancypagestyle{attribution}{
-	\fancyhf{} % clear all header and footer fields
-	\fancyfoot[L]{ %left hand side
-		\vspace{-3.0em}\color{separatorgray}\small\sffamily
-		\bookletsubtitle \\
-		{\rmfamily{\LaTeX}} Template created by: Ellis Dickinson \\
-		Document compiled on: \today
-	}
-	\renewcommand{\headrulewidth}{0pt}
-	\renewcommand{\footrulewidth}{0pt}
+    \fancyhf{} % clear all header and footer fields
+    \fancyfoot[L]{ %left hand side
+        \vspace{-3.0em}\color{separatorgray}\small\sffamily
+        \bookletsubtitle \\
+        {\rmfamily{\LaTeX}} Template created by: Ellis Dickinson \\
+        Document compiled on: \today
+    }
+    \renewcommand{\headrulewidth}{0pt}
+    \renewcommand{\footrulewidth}{0pt}
 }
 
-% Function for adding vspace above underbrace
-\newcommand*\addunderbracespace[1]{\vrule width0pt height0pt depth#1\relax}
 
-% Define custom struts for aligning square
-% #1 the height, #2 the depth
-% Credit: https://tex.stackexchange.com/questions/14602/set-strut-height
-\def\mystrut(#1,#2){\vrule height #1pt depth #2pt width 0pt}
 
 
 \newcommand{\formattedunittitle}{Unit P\getcurrentref{section}}
