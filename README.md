@@ -17,3 +17,6 @@ The relevant projects are:
 * MiKTeX (preferred), or proTeXt - Windows
 * MacTeX - macOS
 * TeX Live Distribution - Linux
+
+### Need a bit more information?
+Visit the repository documentation at https://bytefloater.gitbook.io/maths-textbook/.
