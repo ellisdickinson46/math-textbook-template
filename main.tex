@@ -1,13 +1,29 @@
 %
 % Elliott Hudson College - Maths Booklet Template
-% Created by: Ellis Dickinson
 % Originally created on: May 3rd 2021
+%
+% Copyright (C) 2021 Ellis Dickinson
+%
+% LICENSE:
+% This program is free software: you can redistribute it and/or modify
+% it under the terms of the GNU General Public License as published by
+% the Free Software Foundation, either version 3 of the License, or
+% any later version.
+%
+% This program is distributed in the hope that it will be useful,
+% but WITHOUT ANY WARRANTY; without even the implied warranty of
+% MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+% GNU General Public License for more details.
+%
+% You should have received a copy of the GNU General Public License
+% along with this program. If not, see <https://www.gnu.org/licenses/>.
+%
 %
 % IMPORTANT!!!!
 % When compiling this document, please use XeLaTeX
 % Other compilers do not support some of the features within this document.
 %
-\documentclass[fleqn, twoside]{article}
+\documentclass[fleqn]{article}
 
 \setcounter{section}{1}                                             % Set the Unit Number (without Leading 0's)
 \newcommand{\coursetitle}{AS Pure Mathematics (Year 1)}             % Set the Course Title
@@ -15,15 +31,33 @@
 \newcommand{\bookletsubtitle}{Content last revised by: J Sherwood}  % Set the Subtitle
 
 \input{components/preamble}
-\saffrontheme
-\usepackage{lipsum}
+\bluetheme
 
 
 \begin{document}
-
 \input{components/titlepage}
-\vfill
 \input{components/keyinformation}
+
+
+\begin{keyinformation}{images/link-to-y1-sol-bank}
+    \textbf{Key Formulae:}
+    \begin{align*}
+        x^a \times x^b &= x^{a+b}                    \\
+        x^a \div x^b &= x^{a-b}                      \\
+        (x^a)^b &= x^{ab}                            \\
+        x^{-n} &= \dfrac{1}{x^n}                     \\
+        x^{\tfrac{1}{n}} &= \sqrt[\textstyle{^n}]{x} \\
+        a^2 - b^2 &= (a-b)(a+b)
+    \end{align*}
+
+    \textbf{Key Terms:}
+    \begin{itemize}
+        \item \textbf{Expanding Brackets:} Multiplying brackets out
+        \item \textbf{Factorising Brackets:} Putting expressions back into brackets
+        \item \textbf{Surd:} A root of a number which can't be written as a whole number or fraction
+        \item \textbf{Rationalising Denominator:} Removing the surd from the bottom of the fraction
+    \end{itemize}
+\end{keyinformation}
 
 \newpage
 \pagestyle{attribution}
@@ -35,6 +69,7 @@
         \setcounter{enumi}{\getcurrentref{section}-1}
         \item \textbf{\bookletunittitle}
         \begin{enumerate}[label*=\bfseries\arabic*]
+            % Unit Components Go Here
             \item Index Laws
             \item Expanding Brackets
             \item Factorising
@@ -61,6 +96,7 @@
         }
     \end{tabularx}
 \end{mybox2}
+
 \begin{note*}{Exam Question}{}
     \rmfamily
     \begin{enumerate}[label=\textbf{\alph*}]
@@ -69,15 +105,17 @@
     \end{enumerate}
 
 \end{note*}
-
 \newpage
 \pagestyle{branded}
-\subsection{Lesson 1}
+
+
+
+\lesson{Lesson 1}
 
 
 \begin{examplebox}{}{}
     \\ % Example Syntax
-    Simplify these expressions:\\
+    Simplify these expressions:                                 \\
     \textbf{a}\hspace{2mm} $x^2 \times x^5$        \hspace{7mm} \
     \textbf{b}\hspace{2mm} $2r^2 \times 3r^3$      \hspace{7mm} \
     \textbf{c}\hspace{2mm} $\dfrac{b^7}{b^4}$      \hspace{7mm} \
@@ -88,8 +126,8 @@
 
 
 \subsection{Lesson 2}
-\begin{note*}{Hello}{}
-    hello
+\begin{note*}{Title}{}
+    Your content goes here.
 \end{note*}
 
 \begin{examplebox}{}{}
@@ -103,7 +141,10 @@
 
 \newpage
 
-\lipsum[2-30]
+\begin{mybox2}[colbacktitle=WildStrawberry]{Title}
+    Your content goes here
+\end{mybox2}
+
 
 
 
