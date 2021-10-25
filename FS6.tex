@@ -385,7 +385,7 @@
     
     \begin{center}
     \begin{minipage}[t]{0.7\linewidth}
-        \begin{tabularx}{\textwidth}{|X|>{\centering\arraybackslash}p{10mm}|>{\centering\arraybackslash}p{10mm}|>{\centering\arraybackslash}p{10mm}|>{\centering\arraybackslash}p{10mm}|>{\centering\arraybackslash}p{10mm}|>{\centering\arraybackslash}p{10mm}|}
+        \begin{tabularx}{\textwidth}{|X|*6{>{\centering\arraybackslash}p{10mm}|}}
             \hline
             \textbf{Number of DVDs} & 1 & 2 & 3 & 4 & \textbf{Total}                          \\\hline
             \textbf{Observed frequency ($O_i$)} & 33 & 12 & 5 & 2 & 52       \\\hline
@@ -433,7 +433,7 @@
     
     \begin{center}
     \begin{minipage}[t]{0.7\linewidth}
-        \begin{tabularx}{\textwidth}{|X|>{\centering\arraybackslash}p{10mm}|>{\centering\arraybackslash}p{10mm}|>{\centering\arraybackslash}p{10mm}|>{\centering\arraybackslash}p{10mm}|>{\centering\arraybackslash}p{10mm}|>{\centering\arraybackslash}p{10mm}|>{\centering\arraybackslash}p{10mm}|}
+        \begin{tabularx}{\textwidth}{|X|*7{>{\centering\arraybackslash}p{10mm}|}}
             \hline
             \textbf{Number of girls (r)} & 0 & 1 & 2 & 3 & 4 & 5                          \\\hline
             \textbf{Frequency} & 13 & 18 & 38 & 20 & 10 & 1       \\\hline
@@ -454,7 +454,7 @@
     
     \begin{center}
     \begin{minipage}[t]{0.6\linewidth}
-        \begin{tabularx}{\textwidth}{|X|>{\centering\arraybackslash}p{10mm}|>{\centering\arraybackslash}p{10mm}|>{\centering\arraybackslash}p{10mm}|>{\centering\arraybackslash}p{10mm}|}
+        \begin{tabularx}{\textwidth}{|X|*4{>{\centering\arraybackslash}p{10mm}|}}
             \hline
             \textbf{Number of breakdowns} & 0 & 1 & 2 & >2                          \\\hline
             \textbf{Frequency} & 38 & 32 & 10 & 0       \\\hline
@@ -476,7 +476,7 @@
     
     \begin{center}
     \begin{minipage}[t]{0.8\linewidth}
-        \begin{tabularx}{\textwidth}{|X|>{\centering\arraybackslash}p{10mm}|>{\centering\arraybackslash}p{10mm}|>{\centering\arraybackslash}p{10mm}|>{\centering\arraybackslash}p{10mm}|>{\centering\arraybackslash}p{10mm}|>{\centering\arraybackslash}p{10mm}|>{\centering\arraybackslash}p{10mm}|>{\centering\arraybackslash}p{10mm}|>{\centering\arraybackslash}p{10mm}|}
+        \begin{tabularx}{\textwidth}{|X|*9{>{\centering\arraybackslash}p{10mm}|}}
             \hline
             \textbf{Number of calls} & 1  & 2  & 3  & 4  & 5 & 6 & 7 & \textbf{Total}  \\\hline
             \textbf{Frequency}       & 12 & 28 & 28 & 17 & 7 & 4 & 2 & 2               \\\hline
@@ -556,6 +556,7 @@
 \fakesubsection{Exercises}
 \exercise{}
 \begin{enumerate}
+    \setlength\itemsep{0.5em}
     \item An octagonal dice is thrown 500 times and the results are noted. It is assumed that the dice is unbiased. A test is to be done to see whether the observed results differ from the expect ones. \\Write down a null hypothesis and an alternative hypothesis that can be used.
     
     \item A six-sided dice is rolled 180 times to try to establish whether or not it is fair. The results of the rolls are as follows:\vspace{3mm}\\
@@ -580,8 +581,83 @@
             \item Calculate the expected number of students in each year group assuming your null hypothesis is true.
             \item Calculate $X^2$ for the observed data.
         \end{enumerate}
+        
+    \item A particular genetic mutation is believed to have a 75\% chance of being passed from parent to child. In an experiment, 160 adults with the mutation each had one of their children tested to see if the child had inherited the mutation. The results are as follows:\vspace{3mm}\\
+        \begin{tabularx}{0.37\textwidth}{|X|*2{>{\centering\arraybackslash}p{10mm}|}}
+            \hline
+            \textbf{Mutation present} & Yes & No  \\\hline
+            \textbf{Observed ($O_i$)} & 117 & 43  \\\hline
+        \end{tabularx}\vspace{6mm}
+        \begin{enumerate}[label=\bfseries \alph*\space ]
+            \item Calculate the expected frequencies
+            \item State the null and alternative hypotheses.
+            \item Calculate the goodness of fit of the data to the expected result.
+        \end{enumerate}
+        
+    \item John has two coins that he can't tell apart. One is fair. The other is biased and will land on heads with probability 0.6. He flips one of the coins 50 times and records the results in the frequency table given below.\vspace{3mm}\\
+        \begin{tabularx}{0.37\textwidth}{|X|*2{>{\centering\arraybackslash}p{10mm}|}}
+            \hline
+            \textbf{Result}           & H  & T   \\\hline
+            \textbf{Observed ($O_i$)} & 28 & 22  \\\hline
+        \end{tabularx}\vspace{6mm}
+        \begin{enumerate}[label=\bfseries \alph*\space ]
+            \item Calculate the expected frequencies for each coin
+            \item Calculate the goodness of fit between the observed results and the expected results for each coin.
+            \item Which coin is John more likely to have been using? Give a reason for your answer.
+        \end{enumerate}
+        
+    \item The BMI profile of English adults is given below. \vspace{2mm}\\
+        \begin{tabularx}{0.89\textwidth}{|X|*5{>{\centering\arraybackslash}p{22mm}|}}
+            \hline
+            \textbf{Country} & Underweight  & Normal & Overweight & Obese & Total   \\\hline
+            England          & 2\%          & 35\%   & 36\%       & 27\%  & 100\%   \\\hline
+        \end{tabularx}\vspace{4mm}
+        
+        {\footnotesize\hfill Obesity Statistics, House of Commons Briefing Paper, Number 336, 2017\hspace{0.06\textwidth}}\vspace{2mm}
+        
+        You may assume that these percentages reflect the true distribution. A sample is taken of adults in Wales, and the results are recorded in the table below.\vspace{2mm}\\
+        \begin{tabularx}{0.89\textwidth}{|X|*5{>{\centering\arraybackslash}p{22mm}|}}
+            \hline
+            \textbf{Country} & Underweight  & Normal & Overweight & Obese & Total   \\\hline
+            Wales (Men)      & 4            & 70     & 80         & 46    & 200     \\\hline
+            Wales (Women)    & 6            & 81     & 65         & 48    & 200     \\\hline
+        \end{tabularx}\vspace{6mm}
+        
+        By calculating the goodness-of-fit statistic for both Welsh men and women, determine which group more closely matches the English distribution.
 \end{enumerate}
+\newpage
 
+\exercise{}
+\begin{enumerate}
+    \setlength\itemsep{0.5em}
+    \item In an experiment where a dice is rolled 72 times, the frequency distribution is to be compared to a discrete uniform distribution as shown:\vspace{3mm}\\
+        \begin{tabularx}{0.7\textwidth}{|X|*6{>{\centering\arraybackslash}p{10mm}|}}
+            \hline
+            \textbf{Number on dice, $n$}       & 1  & 2  & 3  & 4  & 5  & 6       \\\hline
+            \textbf{Observed frequency, $O_i$} & 16 & 11 & 13 & 15 & 8  & 9       \\\hline
+            \textbf{Expected frequency, $E_i$} & 12 & 12 & 12 & 12 & 12 & 12      \\\hline
+        \end{tabularx}\vspace{6mm}
+        
+        Test, at the 5\% significance level, whether or not the observed frequencies could be modelled by a discrete uniform distribution. \hfill\textbf{(6 marks)}
+    \item In a tombola, tickets ending in 0 or a 5 are guaranteed a prize.  \\
+        All other tickets will lose. At a fair, 120 tickets were drawn, and \\ 
+        the numbers of winning tickets were as follows.                     \vspace{4mm}\\
+        \begin{tabularx}{0.55\textwidth}{|X|*3{>{\centering\arraybackslash}p{15mm}|}}
+            \cline{2-4}
+            \multicolumn{1}{c|}{}          & Winning & Losing & Total \\\hline
+            \textbf{Observed ticket draws} & 15      & 105    & 120   \\\hline
+        \end{tabularx}
+        \begin{table}[!ht]
+            \begin{tabularx}{\dimexpr\textwidth}{Xp{2.0in}}
+                {} & \vspace{-3.5cm}\begin{mybox2}[colbacktitle=green]{Hint}
+                    If the tickets were fairly\\ distributed, it would be \\expected that 2 in every 10 would be winning tickets.
+                \end{mybox2}
+            \end{tabularx}
+        \end{table}\vspace{-2mm}
+        
+        Test, at the 5\% significance level, whether or not the tombola was fair \hfill\textbf{(6 marks)}
+    \item A local travel agent has made a prediction as to how many trips abroad his customers make.
+\end{enumerate}
 
 
 
