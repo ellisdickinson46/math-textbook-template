@@ -25,9 +25,6 @@
 %
 \documentclass[fleqn]{article}
 
-\usepackage{relsize}
-\usepackage{tabulary}
-
 \setcounter{section}{6}                                          % Set the Unit Number (without Leading 0's)
 \newcommand{\coursetitle}{A-Level Further Mathematics}           % Set the Course Title
 \newcommand{\bookletunittitle}{Chi-Squared Tests}                % Set the Unit Title
@@ -46,7 +43,7 @@
 \input{components/keyinformation}
 
 
-\begin{keyinformation}{images/link-to-y1-sol-bank}
+\begin{keyinformation}{images/links/f-maths/f-stats-1}
     \begin{enumerate}
         \item The \textbf{null} and \textbf{alternative hypotheses} generally take the following form:        \\
             H\textsubscript{0}: There is no difference between the observed and the theoretical distribution. \\
@@ -103,9 +100,9 @@
     Suppose you take a dice and throw it 120 times. You might get results like these:
     \begin{center}\vspace{-2mm}
     \begin{minipage}[t]{0.8\linewidth}
-        \begin{tabularx}{\textwidth}{|X|>{\centering\arraybackslash}p{11mm}|>{\centering\arraybackslash}p{11mm}|>{\centering\arraybackslash}p{11mm}|>{\centering\arraybackslash}p{11mm}|>{\centering\arraybackslash}p{11mm}|>{\centering\arraybackslash}p{11mm}|}
+        \begin{tabularx}{\textwidth}{|X|*6{P{11mm}|}}
             \hline
-            \textbf{Number on dice, n} & 1 & 2 & 3 & 4 & 5 & 6                      \\\hline
+            \textbf{Number on dice, n}          & 1 & 2 & 3 & 4 & 5 & 6             \\\hline
             \textbf{Observed frequency ($O_i$)} & 23 & 15 & 25 & 18 & 21 & 18       \\\hline
         \end{tabularx}
     \end{minipage}
@@ -121,9 +118,9 @@
     
     \begin{center}\vspace{-2mm}
     \begin{minipage}[t]{0.8\linewidth}
-        \begin{tabularx}{\textwidth}{|X|>{\centering\arraybackslash}p{11mm}|>{\centering\arraybackslash}p{11mm}|>{\centering\arraybackslash}p{11mm}|>{\centering\arraybackslash}p{11mm}|>{\centering\arraybackslash}p{11mm}|>{\centering\arraybackslash}p{11mm}|}
+        \begin{tabularx}{\textwidth}{|X|*6{P{11mm}|}}
             \hline
-            \textbf{Number on dice, n} & 1 & 2 & 3 & 4 & 5 & 6                      \\\hline
+            \textbf{Number on dice, n}          & 1  & 2  & 3  & 4  & 5  & 6        \\\hline
             \textbf{Observed frequency ($O_i$)} & 20 & 20 & 20 & 20 & 20 & 20       \\\hline
         \end{tabularx}
         \vspace{4mm}
@@ -142,9 +139,9 @@
     
     \begin{center}\vspace{-2mm}
     \begin{minipage}[t]{0.8\linewidth}
-        \begin{tabularx}{\textwidth}{|X|>{\centering\arraybackslash}p{11mm}|>{\centering\arraybackslash}p{11mm}|>{\centering\arraybackslash}p{11mm}|>{\centering\arraybackslash}p{11mm}|>{\centering\arraybackslash}p{11mm}|>{\centering\arraybackslash}p{11mm}|}
+        \begin{tabularx}{\textwidth}{|X|*6{P{11mm}|}}
             \hline
-            \textbf{Number on dice, n} & 1 & 2 & 3 & 4 & 5 & 6                      \\\hline
+            \textbf{Number on dice, n}          & 1  & 2  & 3  & 4  & 5  & 6        \\\hline
             \textbf{Observed frequency ($O_i$)} & 23 & 15 & 25 & 18 & 21 & 18       \\\hline
             \textbf{Observed frequency ($O_i$)} & 20 & 20 & 20 & 20 & 20 & 20       \\\hline
         \end{tabularx}
@@ -237,7 +234,7 @@
 
     \begin{center}
     \begin{minipage}[t]{0.9\linewidth}
-        \begin{tabularx}{\textwidth}{|X|>{\centering\arraybackslash}p{11mm}|>{\centering\arraybackslash}p{11mm}|>{\centering\arraybackslash}p{11mm}|>{\centering\arraybackslash}p{11mm}|>{\centering\arraybackslash}p{11mm}|>{\centering\arraybackslash}p{11mm}|>{\centering\arraybackslash}p{11mm}|>{\centering\arraybackslash}p{11mm}|}
+        \begin{tabularx}{\textwidth}{|X|*7{P{11mm}|}}
             \hline
             \textbf{Number, n} & 2 & 3 & 4 & 5 & 6 & 7 & 8                          \\\hline
             \textbf{Observed by Billy ($O_i$)} & 12 & 15 & 22 & 41 & 33 & 21 & 16   \\\hline
@@ -269,7 +266,7 @@
     
     \begin{center}
     \begin{minipage}[t]{0.8\linewidth}
-        \begin{tabularx}{\textwidth}{|X|>{\centering\arraybackslash}p{11mm}|>{\centering\arraybackslash}p{11mm}|>{\centering\arraybackslash}p{11mm}|>{\centering\arraybackslash}p{11mm}|>{\centering\arraybackslash}p{11mm}|>{\centering\arraybackslash}p{11mm}|}
+        \begin{tabularx}{\textwidth}{|X|*6{P{11mm}|}}
             \hline
             \textbf{Number on dice, n} & 1 & 2 & 3 & 4 & 5 & 6                      \\\hline
             \textbf{Observed frequency ($O_i$)} & 23 & 15 & 25 & 18 & 21 & 18       \\\hline
@@ -291,10 +288,10 @@
     
     \begin{center}
     \begin{minipage}[t]{\linewidth}
-        \begin{tabularx}{\textwidth}{|X|>{\centering\arraybackslash}p{33mm}|>{\centering\arraybackslash}p{27mm}|>{\centering\arraybackslash}p{38mm}|>{\centering\arraybackslash}p{28mm}|}
+        \begin{tabularx}{\textwidth}{|X|P{38mm}|P{27mm}|P{44mm}|P{20mm}|}
             \cline{2-5}
-            \multicolumn{1}{c|}{} & No regular exercise & Once a week & More than once a week & Total                      \\\hline
-            \textbf{Frequency} & 73 & 57 & 20 & 150       \\\hline
+            \multicolumn{1}{c|}{} & \textbf{No regular exercise} & \textbf{Once a week} & \textbf{More than once a week} & \textbf{Total}  \\\hline
+            \textbf{Frequency}    & 73                           & 57                   & 20                             & 150             \\\hline
         \end{tabularx}
         \vspace{4mm}
     \end{minipage}
@@ -308,20 +305,20 @@
 
 
 \begin{examplebox}{}{}
-    \\
+    \\ % TODO Example 4
     It is suggested that 40\% of households have 0 children, 20\% have 1 child, 25\% have 2 children, 10\% have 3 children and 5\% have 4 or more children. \vspace{2mm}\\
     The table below shows the observed frequencies for a sample of 80 households.
     
     \begin{center}
-    \begin{minipage}[t]{0.9\linewidth}
-        \begin{tabularx}{\textwidth}{|X|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|}
-            \hline
-            \textbf{Number of children, n} & 0 & 1 & 2 & 3 & $\geq$ 4                    \\\hline
-            \textbf{Observed frequency ($O_i$)} & 27 & 19 & 27 & 4 & 3       \\\hline
-            \textbf{Expected frequency ($E_i$)} & & & & &       \\\hline
-        \end{tabularx}
-        \vspace{4mm}
-    \end{minipage}
+        \begin{minipage}[t]{0.9\linewidth}
+            \begin{tabularx}{\textwidth}{|X|*5{P{16mm}|}}
+                \hline
+                \textbf{Number of children, n}      & 0  & 1  & 2  & 3 & $\geq$ 4 \\\hline
+                \textbf{Observed frequency ($O_i$)} & 27 & 19 & 27 & 4 & 3        \\\hline
+                \textbf{Expected frequency ($E_i$)} &    &    &    &   &          \\\hline
+            \end{tabularx}
+            \vspace{4mm}
+        \end{minipage}
     \end{center}
     
     Test at the 5\% significance level whether or not the suggested distribution is a suitable model.
@@ -350,33 +347,53 @@
         \item Draw the appropriate conclusion and interpret in the context of the original problem.
     \end{enumerate}    
 \end{mybox2}
-
-
 \begin{examplebox}{}{}
     \\ % TODO Example 5
     The data in the table are thought to be modelled by a binomial distribution $B(10,0.2)$.
     
     \begin{center}
-    \begin{minipage}[t]{0.75\linewidth}
-        \begin{tabularx}{\textwidth}{|X|>{\centering\arraybackslash}p{8mm}|>{\centering\arraybackslash}p{8mm}|>{\centering\arraybackslash}p{8mm}|>{\centering\arraybackslash}p{8mm}|>{\centering\arraybackslash}p{8mm}|>{\centering\arraybackslash}p{8mm}|>{\centering\arraybackslash}p{8mm}|>{\centering\arraybackslash}p{8mm}|>{\centering\arraybackslash}p{8mm}|>{\centering\arraybackslash}p{8mm}|}
+        \begin{minipage}[t]{0.75\linewidth}
+            \begin{tabularx}{\textwidth}{|X|*9{P{8mm}|}}
+                \hline
+                $x$                & 0  & 1  & 2  & 3  & 4 & 5 & 6 & 7 & 8    \\\hline
+                \textbf{Frequency} & 12 & 28 & 28 & 17 & 7 & 4 & 2 & 2 & 0    \\\hline
+            \end{tabularx}
+            \vspace{4mm}
+        \end{minipage}
+    \end{center}
+    
+    Test, at the 5\% significance level, whether this is a good model.
+\end{examplebox}
+\newpage
+
+\begin{examplebox}{}{}
+    \\ % TODO Example 6
+    The number of telephone calls arriving at an exchange in six-minute periods were recorded over a period of 8 hours, with the following results.
+    
+    \begin{center}
+    \begin{minipage}[t]{0.8\linewidth}
+        \begin{tabularx}{\textwidth}{|X|*9{P{8mm}|}}
             \hline
-            $x$ & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8                         \\\hline
-            \textbf{Frequency} & 12 & 28 & 28 & 17 & 7 & 4 & 2 & 2 & 0       \\\hline
+            \textbf{Number of calls, $r$} & 0 & 1  & 2  & 3  & 4 & 5 & 6 & 7 & 8    \\\hline
+            \textbf{Frequency, $f_r$}     & 8 & 19 & 26 & 13 & 7 & 5 & 1 & 1 & 0    \\\hline
         \end{tabularx}
         \vspace{4mm}
     \end{minipage}
     \end{center}
     
-    Test, at the 5\% significance level, whether this is a good model.
- 
-\end{examplebox}
-\newpage
+    Can these results be modelled using the Poisson distribution with mean 2.2, show how you decide using a 5\% level of significance.
+\end{examplebox}\vspace{1mm}
+\begin{minipage}[t]{\linewidth}
+    \renewcommand{\arraystretch}{1.5}%
+    \begin{tabularx}{\textwidth}{|X|*9{P{12mm}|}}
+        \hline
+        \cellcolor[HTML]{E0E0E0}\textbf{Number of calls}    & 0     & 1      & 2      & 3      & 4     & 5 & 6 & 7 & \\\hline
+        \cellcolor[HTML]{E0E0E0}\textbf{Probability}        &       &        &        &        &       &   &   &   & \\\hline
+        \cellcolor[HTML]{E0E0E0}\textbf{Expected frequency} & 8.864 & 19.501 & 21.451 & 15.731 & 8.652 &   &   &   & \\\hline
+    \end{tabularx}
+    \vspace{4mm}
+\end{minipage}
 
-\begin{examplebox}{}{}
-    \\
-    
-    
-\end{examplebox}
 \newpage
 
 \begin{examplebox}{}{}
@@ -387,8 +404,8 @@
     \begin{minipage}[t]{0.7\linewidth}
         \begin{tabularx}{\textwidth}{|X|*6{>{\centering\arraybackslash}p{10mm}|}}
             \hline
-            \textbf{Number of DVDs} & 1 & 2 & 3 & 4 & \textbf{Total}                          \\\hline
-            \textbf{Observed frequency ($O_i$)} & 33 & 12 & 5 & 2 & 52       \\\hline
+            \textbf{Number of DVDs}             & 1  & 2  & 3 & 4 & \textbf{Total} \\\hline
+            \textbf{Observed frequency ($O_i$)} & 33 & 12 & 5 & 2 & 52             \\\hline
         \end{tabularx}
         \vspace{4mm}
     \end{minipage}
@@ -636,7 +653,7 @@
             \textbf{Number on dice, $n$}       & 1  & 2  & 3  & 4  & 5  & 6       \\\hline
             \textbf{Observed frequency, $O_i$} & 16 & 11 & 13 & 15 & 8  & 9       \\\hline
             \textbf{Expected frequency, $E_i$} & 12 & 12 & 12 & 12 & 12 & 12      \\\hline
-        \end{tabularx}\vspace{6mm}
+        \end{tabularx}\vspace{5mm}
         
         Test, at the 5\% significance level, whether or not the observed frequencies could be modelled by a discrete uniform distribution. \hfill\textbf{(6 marks)}
     \item In a tombola, tickets ending in 0 or a 5 are guaranteed a prize.  \\
@@ -656,12 +673,163 @@
         \end{table}\vspace{-2mm}
         
         Test, at the 5\% significance level, whether or not the tombola was fair \hfill\textbf{(6 marks)}
-    \item A local travel agent has made a prediction as to how many trips abroad his customers make.
+    \item A local travel agent has made a prediction as to how many trips abroad his customers make. He surveys a sample of 100 customers and compares the results to his expectations.\vspace{2mm}\\
+        \begin{tabularx}{0.6\textwidth}{|X|*3{>{\centering\arraybackslash}p{22mm}|}}
+            \hline
+            \textbf{Trips abroard} & None & One  & Two or more   \\\hline
+            \textbf{Expected}      & 10\% & 60\% & 30\%          \\\hline
+            \textbf{Sample}        & 4    & 73   & 23            \\\hline
+        \end{tabularx}\vspace{5mm}
+        
+        Test, at the 2.5\% significance level, whether the travel agent's prediction firs the observed data.
+        
+        \vspace{-1.2mm}\hfill\textbf{(6 marks)}
+    \item In a sample of 100 households, the actual and expected numbers    \\
+        of dogs is a follows:                                               \vspace{3mm}\\
+        \begin{tabularx}{0.61\textwidth}{|X|*7{>{\centering\arraybackslash}p{8mm}|}>{\centering\arraybackslash}p{11mm}|}
+            \hline
+            \textbf{Dogs}     & 0  & 1  & 2  & 3 & 4 & 5 & >5 & \textbf{Total} \\\hline
+            \textbf{Observed} & 45 & 19 & 11 & 8 & 7 & 6 & 4  & 100            \\\hline
+            \textbf{Expected} & 55 & 20 & 10 & 7 & 4 & 3 & 1  & 100            \\\hline
+        \end{tabularx}\vspace{6mm}\\
+        \begin{minipage}{0.59\textwidth}
+        \begin{enumerate}[label=\bfseries \alph*\space ]
+            \item Explain why there are 4 degrees of freedom in \\this case.\hfill\textbf{(2 marks)}
+            \item Test, at the 5\% significance level, whether the observed data fits the expected distribution given.\hfill\textbf{(5 marks)}
+        \end{enumerate}
+        \end{minipage}
+        \begin{table}[!ht]
+            \begin{tabularx}{\dimexpr\textwidth}{Xp{2.17in}}
+                {} & \vspace{-6.1cm}\begin{mybox2}[colbacktitle=green]{Problem-solving}
+                    When using a $\chi^2$ distribution to approximate the \\distribution of $X^2$, if any of the expected frequencies is less than 5 you need to combine cells.
+                \end{mybox2}
+            \end{tabularx}
+        \end{table}\vspace{-6mm}
+    \item In the year 2000, the birth weights of babies were distributed as follows:\vspace{2mm}\\
+        \begin{tabularx}{0.945\textwidth}{|X|*9{>{\centering\arraybackslash}p{17mm}|}}
+            \hline
+            \textbf{Weight (g)} & \textbf{Under 1500}  & \textbf{1500-1999} & \textbf{2000-2499} & \textbf{2500-2999} & \textbf{3000-3499} & \textbf{3500 and over} & \textbf{Total} \\\hline
+            \textbf{Percentage} & 1.3\%          & 1.5\%        & 5\%        & 16.5\%         & 35.7\%         & 40\%             & 100\%            \\\hline
+        \end{tabularx}\vspace{6mm}\\
+        In the year 2015, the birth weights of babies were as follows:\vspace{2mm}\\
+        \begin{tabularx}{0.945\textwidth}{|X|*9{>{\centering\arraybackslash}p{17mm}|}}
+            \hline
+            \textbf{Weight (g)} & \textbf{Under 1500}  & \textbf{1500-1999} & \textbf{2000-2499} & \textbf{2500-2999} & \textbf{3000-3499} & \textbf{3500 and over} & \textbf{Total} \\\hline
+            \textbf{Percentage} & 7286          & 9304        & 32 121        & 112 535         & 244 472         & 281 942             & 687 600            \\\hline
+        \end{tabularx}\vspace{6mm}\\
+        Using a 5\% significance level, decide whether the distribution of birth weights from 2000 can be used as a model for the weights in 2015. \hfill\textbf{(8 marks)}
+\end{enumerate}
+\newpage
+\exercise{}
+
+\begin{enumerate}
+    \setlength\itemsep{0.5em}
+    \item The following table shows observed values for a distribution which it is though may be modelled by a Poisson distribution.\vspace{3mm}\\
+        \begin{tabularx}{0.7\textwidth}{|X|*7{>{\centering\arraybackslash}p{11mm}|}}
+            \hline
+            \textbf{$x$}       & 0 & 1  & 2  & 3  & 4  & 5  & >5       \\\hline
+            \textbf{Frequency} & 12 & 23 & 24 & 24 & 12  & 5 & 0       \\\hline
+        \end{tabularx}\vspace{6mm}\\
+        A possible model is thought to be Po(2). From tables, the expected values are found to be as shown in the following table.\vspace{2mm}\\
+        \begin{tabularx}{0.85\textwidth}{|X|*7{>{\centering\arraybackslash}p{11.5mm}|}}
+            \hline
+            \textbf{$x$}                       & 0     & 1     & 2     & 3     & 4     & 5    & >5         \\\hline
+            \textbf{Expected frequency of $x$} & 13.53 & 27.07 & 27.07 & 18.04 & 9.02  & 3.61 & 1.66       \\\hline
+        \end{tabularx}\vspace{4mm}\\
+        \begin{enumerate}[label=\bfseries \alph*\space ]
+            \item Conduct a goodness-of-fit test at the 5\% significance level.
+        \end{enumerate}
+    \item A mail-order firm receives packets every through the mail.
+    
+        They think that their deliveries are uniformly distributed throughout the week. Test this assertion given that their deliveries over a four-week period were as follows. Use a 0.05 significance level.\vspace{2mm}\\
+        \begin{tabularx}{0.6\textwidth}{|X|*6{>{\centering\arraybackslash}p{11mm}|}}
+            \hline
+            \textbf{Day}       & Mon & Tue & Wed & Thu & Fri  & Sat   \\\hline
+            \textbf{Frequency} & 15  & 23  & 19  & 20  & 14   & 11    \\\hline
+        \end{tabularx}\vspace{3mm}\\
+    \item Data were collected on the number of female puppies born in 200 litters of 8 puppies. It was decided to test whether or not a binomial model with parameters $n$ = 8 and $p$ = 0.5 is a suitable model for the data. The following table shows the observed frequencies and the expected frequencies, to 2 decimal places, obtained in order to carry out this test.\vspace{2mm}\\
+        \begin{tabular}{|P{43mm}|*2{P{52mm}|}}
+            \hline
+            \textbf{Number of females} & \textbf{Observed number of litters} & \textbf{Expected number of litters} \\\hline
+            0                          & 1                                   & 0.78                                \\\hline
+            1                          & 9                                   & 6.25                                \\\hline
+            2                          & 27                                  & 21.88                               \\\hline
+            3                          & 46                                  & $R$                                 \\\hline
+            4                          & 49                                  & $S$                                 \\\hline
+            5                          & 35                                  & $T$                                 \\\hline
+            6                          & 26                                  & 21.88                               \\\hline
+            7                          & 5                                   & 6.25                                \\\hline
+            8                          & 2                                   & 0.78                                \\\hline
+        \end{tabular}\vspace{2mm}
+        \begin{enumerate}[label=\bfseries \alph*\space ]
+            \item Find the values of $R$, $S$ and $T$. \hfill\textbf{(3 marks)}
+            \item Carry out the test to determine whether or not this binomial model is a suitable one. \\
+                State your hypotheses clearly and use a 5\% level of significance. \hfill\textbf{(5 marks)}
+        \end{enumerate}
+    \item The following table shows observed values for what is though to be a geometric distribution with $p$ = 0.6.\vspace{2mm}\\
+        \begin{tabularx}{0.8\textwidth}{|X|*7{>{\centering\arraybackslash}p{10.5mm}|}}
+            \hline
+            \textbf{$k$}                        & 1   & 2  & 3  & 4 & 5 & 6 & \textbf{Total} \\\hline
+            \textbf{Observed frequency ($O_k$)} & 207 & 66 & 13 & 9 & 3 & 2 & 300            \\\hline
+        \end{tabularx}\vspace{5mm}
+        
+        Calculate the expected frequencies and, using a 1\% significance level, conduct a \\goodness-of-fit test. \hfill\textbf{(6 marks)}
+    \item The following table shows observed values for what is though to be a geometric distribution with $p$ = 0.4.\vspace{2mm}\\
+        \begin{tabularx}{0.8\textwidth}{|X|*7{>{\centering\arraybackslash}p{10.5mm}|}}
+            \hline
+            \textbf{$k$}                        & 1   & 2  & 3  & 4 & 5 & 6 & \textbf{Total} \\\hline
+            \textbf{Observed frequency ($O_k$)} & 207 & 66 & 13 & 9 & 3 & 2 & 300            \\\hline
+        \end{tabularx}\vspace{5mm}
+        
+        Calculate the expected frequencies and, using a 5\% significance level, conduct a \\goodness-of-fit test. \hfill\textbf{(6 marks)}
+    \newpage
+    \item Michael has a pet monkey and want to test the theory that, given a typewriter in enough time, the monkey will eventually type out the complete works of Shakespeare. Unfortunately the experiment is a total disaster, and the monkey has succeeded only in producing a seemingly random string of alphabetic characters!
+        
+        Michael decides instead he will now see how random the string of characters is. He reads the string looking for vowels. Each time he finds a vowel, he counts the number of letters until the next vowel. The results are recorded in the table below.\vspace{3mm}\\
+        \begin{tabularx}{0.9\textwidth}{|X|*7{P{7mm}|}P{16mm}|P{12mm}|}
+            \hline
+            \textbf{Characters to the next vowel} & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 or more & \textbf{Total}  \\\hline
+            \textbf{Frequency} & 12  & 14  & 11  & 10  & 5   & 9 & 7 & 7 & 75    \\\hline
+        \end{tabularx}\vspace{3mm}\\
+
+        Michael believes that every letter of the alphabet has an equal chance of being typed by the monkey.
+        \begin{enumerate}[label=\bfseries \alph*\space ]
+            \item Assuming that Michael's belief is accurate, suggest a suitable distribution to model the \\number of letters typed before the next vowel.\hfill\textbf{(2 marks)}
+            \item Conduct a goodness of fit test, at the 5\% significance level, to see if Michael's belief\\ is supported by the data.\hfill\textbf{(5 marks)}
+            \item Describe one limitation of using this experiment to test Michael's belief. \hfill\textbf{(1 mark)}
+        \end{enumerate}
+    \item Wilfred calls his parents every weekend to tell them about his week. Unfortunately Wilfred is very forgetful, and can't remember if the last digit of his parents phone number is 2, 5 or 7. When he wants to call his parents, he simply guesses the last number, and wait to see if his parents answer. If they don't he tries again.
+    
+        The number of times Wilfred dials before he gets through to his parents throughout the year is recorded in the table below.\vspace{-1mm}
+        \begin{center}
+            \begin{tabularx}{0.75\textwidth}{|X|*6{P{12mm}|}}
+                \hline
+                \textbf{Number of attempts} & 1  & 2  & 3  & 4 & 7 & \textbf{Total}  \\\hline
+                \textbf{Frequency observed} & 27 & 10 & 10 & 4 & 1 & 52              \\\hline
+            \end{tabularx}
+        \end{center}\vspace{3mm}
+        Wilfred claims that the number of attempts made each time he calls his parents can be modelled as a geometric distribution with the probability of success $\frac{1}{3}$.
+        \begin{enumerate}[label=\bfseries \alph*\space ]
+            \item Give one criticism of Wilfred's model \hfill\textbf{(1 mark)}
+            \item Test Wilfred's claim at the 5\% significance level. \hfill\textbf{(6 marks)}
+        \end{enumerate}
+\end{enumerate}
+\newpage
+
+\exercise{}
+\begin{enumerate}
+    \item Over a period of 50 weeks the numbers of road accidents reported to a police station were as shown.
+    \begin{enumerate}[label=\bfseries \alph*\space ]
+        \item Find the mean number of accidents per week.
+        \item Using this mean under 0.10 significance level, test the assertion that these data are from a population with a Poisson distribution.
+    \end{enumerate}
 \end{enumerate}
 
 
 
-
+\newpage
+\fakesubsection{Exercises}
+\exercise{(Answers)}
 
 
 \end{document}

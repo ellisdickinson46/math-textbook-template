@@ -1,5 +1,7 @@
 % DO NOT MODIFY THIS FIILE
 % ----------------------------------------------
+\usepackage{relsize}
+\usepackage{tabulary}
 \usepackage[dvipsnames, table]{xcolor}
 \usepackage[a4paper, portrait, margin=2cm, top=1.8cm, left=1.8cm, bottom=2cm]{geometry}
 \usepackage{titlesec}
@@ -339,5 +341,12 @@
 
 
 
-
+% Metadata Processing
+% ----------------------------------------------
 \newcommand{\formattedunittitle}{Unit \unitprefix\getcurrentref{section}}
+
+
+
+% Additional tabular column types
+% ----------------------------------------------
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
