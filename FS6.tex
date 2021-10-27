@@ -36,6 +36,8 @@
 
 % Preamble Overrides
 \setlength{\tabcolsep}{1mm}
+\usepackage{hhline}
+
 
 % Document Content Starts Here
 \begin{document}
@@ -488,15 +490,15 @@
 
 
 \begin{examplebox}{}{}
-    \\
+    \\ % TODO Example 10
     David doesn't have a car. If it's raining in the morning when he has to go to work, he calls his friends one by one to see if anyone can give him a lift. Since starting his job it has rained on 255 mornings. \\David has recorded the number of calls he had to make on each of these morning before finding a willing driver.
     
     \begin{center}
     \begin{minipage}[t]{0.8\linewidth}
         \begin{tabularx}{\textwidth}{|X|*9{>{\centering\arraybackslash}p{10mm}|}}
             \hline
-            \textbf{Number of calls} & 1  & 2  & 3  & 4  & 5 & 6 & 7 & \textbf{Total}  \\\hline
-            \textbf{Frequency}       & 12 & 28 & 28 & 17 & 7 & 4 & 2 & 2               \\\hline
+            \textbf{Number of calls} & 1   & 2  & 3  & 4  & 5  & 6 & 7 & \textbf{Total}  \\\hline
+            \textbf{Frequency}       & 130 & 54 & 24 & 28 & 13 & 5 & 1 & 255             \\\hline
         \end{tabularx}
         \vspace{4mm}
     \end{minipage}
@@ -529,7 +531,7 @@
     If the distribution you are testing is the discrete uniform distribution, then you have not estimated any \\parameters.    
 \end{note*}
 \begin{examplebox}{}{}
-    \\
+    \\ % TODO Example 11
     Successful contestants in a TV game show were allowed to select from one of five boxes, four of which contained prizes, and one of which contained nothing. The boxes were numbers 1 to 5, and, when the show had run for 100 weeks, the choices made by the contestants were analysed with the following results:
     \begin{center}
     \begin{minipage}[t]{0.55\linewidth}
@@ -564,9 +566,48 @@
     \end{itemize}
 \end{mybox2}
 \begin{examplebox}{}{}
-    \\
-    Test, at the 5\% significance level, whether or not the school that a pupil attends and their grade are independent.    
+    \\ % TODO Example 12
+    Test, at the 5\% significance level, whether or not the school that a pupil attends and their grade are independent.
+    
+    \begin{center}
+    \begin{minipage}[t]{0.7\linewidth}
+        \renewcommand{\arraystretch}{1.2}
+        \begin{tabularx}{\textwidth}{|X|P{10mm}|*3{P{15mm}|}P{20mm}|}
+            \hhline{~~|---|-|}
+            \multicolumn{2}{c|}{} & \multicolumn{3}{c|}{\cellcolor[HTML]{E0E0E0}Pass (criterion 1)}                            & \cellcolor[HTML]{E0E0E0}   \\\hhline{~~|---|>{\arrayrulecolor[HTML]{E0E0E0}}->{\arrayrulecolor{black}}|}
+            \multicolumn{2}{c|}{} & \cellcolor[HTML]{E0E0E0}$A$  & \cellcolor[HTML]{E0E0E0}$B$  & \cellcolor[HTML]{E0E0E0}$C$  & \cellcolor[HTML]{E0E0E0}\multirow{-2}{*}{Totals}  \\\hline
+            \cellcolor[HTML]{E0E0E0} & \cellcolor[HTML]{E0E0E0}$X$ & 18 & 12 & 20 & 50                                                                      \\\hhline{|>{\arrayrulecolor[HTML]{E0E0E0}}->{\arrayrulecolor{black}}|*5{-}|}
+            \multirow{-2}{=}{\cellcolor[HTML]{E0E0E0}\shortstack[l]{School\\(criterion 2)}} & \cellcolor[HTML]{E0E0E0}$Y$ & 26 & 12 & 32 & 70               \\\thickhline
+            \cellcolor[HTML]{E0E0E0} Totals & \cellcolor[HTML]{E0E0E0} & 44 & 24 & 52 & 120                                                                 \\\hline          
+        \end{tabularx}
+        \vspace{4mm}
+    \end{minipage}
+    \end{center}
 \end{examplebox}
+\newpage
+
+\begin{examplebox}{}{}
+    \\ % TODO Example 13
+    During the trial of a new drug, 60 volunteers out of 200 were treated with the drug. Those who experienced relief of their symptoms and those who did not were recorded a in the table.
+    
+    \begin{center}
+    \begin{minipage}[t]{0.6\linewidth}
+        \begin{tabularx}{\textwidth}{|X|*3{P{20mm}|}}
+            \cline{2-4}
+            \multicolumn{1}{c|}{} & \textbf{Relief} & \textbf{No relief} & \textbf{Totals}   \\\hline
+            \textbf{Treated}      & 10              & 50                 & 60                \\\hline
+            \textbf{Not Treated}  & 40              & 100                & 140               \\\hline
+            \textbf{Totals}       & 50              & 150                & 200               \\\hline
+        \end{tabularx}
+        \vspace{4mm}
+    \end{minipage}
+    \end{center}
+    
+    Use a suitable test to see if there is any association between treatment with the drug and relief of symptoms. Use a 5\% significance level.
+\end{examplebox}
+\vfill
+\begin{practice*}{Exercise 6E}{}
+\end{practice*}
 \newpage
 
 
@@ -727,8 +768,8 @@
     \item The following table shows observed values for a distribution which it is though may be modelled by a Poisson distribution.\vspace{3mm}\\
         \begin{tabularx}{0.7\textwidth}{|X|*7{>{\centering\arraybackslash}p{11mm}|}}
             \hline
-            \textbf{$x$}       & 0 & 1  & 2  & 3  & 4  & 5  & >5       \\\hline
-            \textbf{Frequency} & 12 & 23 & 24 & 24 & 12  & 5 & 0       \\\hline
+            \textbf{$x$}       & 0  & 1  & 2  & 3  & 4  & 5 & >5       \\\hline
+            \textbf{Frequency} & 12 & 23 & 24 & 24 & 12 & 5 & 0       \\\hline
         \end{tabularx}\vspace{6mm}\\
         A possible model is thought to be Po(2). From tables, the expected values are found to be as shown in the following table.\vspace{2mm}\\
         \begin{tabularx}{0.85\textwidth}{|X|*7{>{\centering\arraybackslash}p{11.5mm}|}}
@@ -788,8 +829,8 @@
         Michael decides instead he will now see how random the string of characters is. He reads the string looking for vowels. Each time he finds a vowel, he counts the number of letters until the next vowel. The results are recorded in the table below.\vspace{3mm}\\
         \begin{tabularx}{0.9\textwidth}{|X|*7{P{7mm}|}P{16mm}|P{12mm}|}
             \hline
-            \textbf{Characters to the next vowel} & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 or more & \textbf{Total}  \\\hline
-            \textbf{Frequency} & 12  & 14  & 11  & 10  & 5   & 9 & 7 & 7 & 75    \\\hline
+            \textbf{Characters to the next vowel} & 1  & 2  & 3  & 4  & 5 & 6 & 7 & 8 or more & \textbf{Total}  \\\hline
+            \textbf{Frequency}                    & 12 & 14 & 11 & 10 & 5 & 9 & 7 & 7         & 75              \\\hline
         \end{tabularx}\vspace{3mm}\\
 
         Michael believes that every letter of the alphabet has an equal chance of being typed by the monkey.
@@ -818,18 +859,558 @@
 
 \exercise{}
 \begin{enumerate}
-    \item Over a period of 50 weeks the numbers of road accidents reported to a police station were as shown.
-    \begin{enumerate}[label=\bfseries \alph*\space ]
-        \item Find the mean number of accidents per week.
-        \item Using this mean under 0.10 significance level, test the assertion that these data are from a population with a Poisson distribution.
-    \end{enumerate}
+    \setlength\itemsep{0.5em}
+    \item Over a period of 50 weeks the numbers of road accidents reported to a police station were as shown.\vspace{2mm}\\
+        \begin{tabularx}{0.6\textwidth}{|X|*5{P{10mm}|}}
+            \hline
+            \textbf{Number of accidents} & 0  & 1  & 2 & 3  & 4 \\\hline
+            \textbf{Frequency}           & 15 & 13 & 9 & 13 & 0 \\\hline
+        \end{tabularx}\vspace{3mm}\\
+        \begin{enumerate}[label=\bfseries \alph*\space ]
+            \item Find the mean number of accidents per week.
+            \item Using this mean under 0.10 significance level, test the assertion that these data are from a population with a Poisson distribution.
+        \end{enumerate}
+    \item A marksman fires 6 shots at a target and records the number $r$ of bullseye hits. After a series of 100 such trials he analyses his scores, the frequencies being as follows.\vspace{2mm}\\
+        \begin{tabularx}{0.65\textwidth}{|X|*7{P{10mm}|}}
+            \hline
+            \textbf{$r$}       & 0 & 1  & 2  & 3  & 4  & 5 & 6 \\\hline
+            \textbf{Frequency} & 0 & 26 & 36 & 20 & 10 & 6 & 2 \\\hline
+        \end{tabularx}\vspace{3mm}\\
+        \begin{enumerate}[label=\bfseries \alph*\space ]
+            \item Estimate the probability of hitting a bullseye.
+            \item Use a test at the 0.05 significance level to see if these results are consistent with the assumption of a binomial distribution.
+        \end{enumerate}
+    \item The table below shows the numer of employees, in thousands, at five factories and the numbers \\of accidents in 3 years.\vspace{2mm}\\
+        \begin{tabularx}{0.65\textwidth}{|X|*5{P{10mm}|}}
+            \hline
+            \textbf{Factory}               & $A$ & $B$ & $C$ & $D$ & $E$ \\\hline
+            \textbf{Employees (thousands)} & 4   & 3   & 5   & 1   & 2   \\\hline
+            \textbf{Accidents}             & 22  & 14  & 25  & 8   & 12  \\\hline
+        \end{tabularx}\vspace{3mm}\\
+        
+        Using a test at the 0.05 significance level, test the hypthesis that the number of accidents per 1000 \\employees is constant at each factory.\hfill\textbf{(6 marks)}
+    \item In a test to determine the red blood cell count in a patient's blood sample, the number of cells in each of 80 squares is counted with the following results.\vspace{2mm}\\
+        \begin{tabularx}{0.9\textwidth}{|X|*9{P{8.5mm}|}}
+            \hline
+            \textbf{Number of cells per square, $x$} & 0 & 1 & 2  & 3  & 4  & 5  & 6 & 7 & 8   \\\hline
+            \textbf{Frequency, $f$}                  & 2 & 8 & 15 & 18 & 14 & 13 & 7 & 3 & 0   \\\hline
+        \end{tabularx}\vspace{3mm}\\
+        
+        It is assumed that these will fit a Poisson distribution. Test this assertion at the 0.05\\ significance level.\hfill\textbf{(10 marks)}
+    \item A factory has a machine. The number of times it broken each week has recorded over 100 weeks with the following results.\vspace{2mm}\\
+        \begin{tabularx}{0.75\textwidth}{|X|*6{P{8.5mm}|}}
+            \hline
+            \textbf{Number of times broken down} & 0  & 1  & 2  & 3 & 4 & 5   \\\hline
+            \textbf{Frequency}                   & 50 & 24 & 12 & 9 & 5 & 0   \\\hline
+        \end{tabularx}\vspace{3mm}\\
+        
+        It is thought that the distribution s Poisson.
+        \begin{enumerate}[label=\bfseries \alph*\space ]
+            \item Give reasons why this assumption might be made. \hfill\textbf{(2 marks)}
+            \item Conduct a test at the 0.05 level of significance to see if the assumption is reasonable.\hfill\textbf{(8 marks)}
+        \end{enumerate}
+    \item In a lottery there are 505 prizes, and it is assumed that they will be uniformly distributed throughout the numbered tickets. An investigation gave the following:\vspace{2mm}\\
+        \begin{tabularx}{0.945\textwidth}{|X|*{10}{P{12mm}|}}
+            \hline
+            \textbf{Ticket number} & 1-1000 & 1001-2000 & 2001-3000 & 3001-4000 & 4001-5000 & 5001-6000 & 6001-7000 & 7001-8000 & 8001-9000 & 9001-10000   \\\hline
+            \textbf{Frequency}     & 56     & 49        & 35        & 47        & 63        & 58        & 44        & 52        & 51        & 50           \\\hline
+        \end{tabularx}\vspace{3mm}\\
+        
+        Using a suitable test with a 0.05 significance level, and stating you null and alternative hypotheses, \\see if the assumption is reasonable. \hfill\textbf{(6 marks)}
+        
+    \newpage
+    \item A student of botany believes that a certain species of wild orchid plants grow in random position in grassy meadowland. He recorded the number of plants in one square metre of grassy meadow, and repeated the procedure to obtain the 148 results in the table.\vspace{2mm}\\
+        \begin{tabularx}{0.8\textwidth}{|X|*7{P{9mm}|}P{20mm}|}
+            \hline
+            \textbf{Number of plants} & 0  & 1  & 2  & 3  & 4  & 5  & 6 & 7 or greater   \\\hline
+            \textbf{Frequency}        & 9  & 24 & 43 & 34 & 21 & 15 & 2 & 0              \\\hline
+        \end{tabularx}\vspace{3mm}\\
+        \begin{enumerate}[label=\bfseries \alph*\space ]
+            \item Show that, to two decimal places, the mean number of plants in one square metre \\is 2.59. \hfill\textbf{(2 marks)}
+            \item Give a reason why the Poisson distribution might be an appropriate model for\\ these data. \hfill\textbf{(1 mark)}
+        \end{enumerate}
+    
+        Using the Poisson model with mean 2.59, expected frequencies corresponding to the given frequencies were calculcated, to two decimal places, and are shown in the table below.\vspace{2mm}\\
+        \begin{tabularx}{0.85\textwidth}{|X|*7{P{10mm}|}P{20mm}|}
+            \hline
+            \textbf{Number of plants} & 0     & 1     & 2   & 3     & 4     & 5     & 6    & 7 or greater   \\\hline
+            \textbf{Frequency}        & 11.10 & 28.76 & $s$ & 32.15 & 20.82 & 10.78 & 4.65 & $t$            \\\hline
+        \end{tabularx}\vspace{3mm}\\
+        \begin{enumerate}[resume, label=\bfseries \alph*\space ]
+            \item Find the values of $s$ and $t$ to two decimal places. \hfill\textbf{(2 marks)}
+            \item Stating clearly your hypotheses, test at the 5\% level of significance whether or not this \\Poisson model is supported by these data. \hfill\textbf{(5 marks)}
+        \end{enumerate}
+    \item The following table shows observed values from a distribution which is though to be modelled by a \\geometric distribution.\vspace{2mm}\\
+        \begin{tabularx}{0.77\textwidth}{|X|*7{P{10mm}|}}
+            \hline
+            \textbf{$k$}                        & 1  & 2  & 3  & 4 & 5 & 6 & \textbf{Total}   \\\hline
+            \textbf{Observed frequency ($O_k$)} & 61 & 24 & 11 & 1 & 2 & 1 & 100              \\\hline
+        \end{tabularx}\vspace{3mm}\\
+        
+        \begin{minipage}{0.59\textwidth}
+            \begin{enumerate}[label=\bfseries \alph*\space ]
+                \item Use the observed data to estimate $p$ (to 3 d.p.). \hfill\textbf{(2 marks)}
+                \item Conduct a goodness-of-fit test at the 5\% significance level to determine whether a geometric distribution is a good fit for the data. \hfill\textbf{(5 marks)}
+            \end{enumerate}
+        \end{minipage}
+        \begin{table}[!ht]
+            \begin{tabularx}{\dimexpr\textwidth}{Xp{2.17in}}
+                {} & \vspace{-3cm}\begin{mybox2}[colbacktitle=green]{Problem-solving}
+                    Use $\dfrac{N}{\sum k \times O_k}$ to estimate the \vspace{-1mm}\\
+                    parameter.
+                \end{mybox2}
+            \end{tabularx}
+        \end{table}\vspace{-4mm}
+    \item Each day after work Katie flags down a taxi to take her home. She records how many taxis she tries to flag down before one stop, over the course of 100 days.\vspace{2mm}\\
+        \begin{tabularx}{0.57\textwidth}{|X|*6{P{10mm}|}}
+            \hline
+            \textbf{Attempts}  & 1  & 2  & 3 & 4 & 5 & \textbf{Total}   \\\hline
+            \textbf{Frequency} & 76 & 17 & 4 & 2 & 1 & 100              \\\hline
+        \end{tabularx}\vspace{3mm}\\
+
+        Katie thinks she can model the number of attempts each day using a geometric random \\variable $X \sim \text{Geo}(p)$.
+        \begin{enumerate}[label=\bfseries \alph*\space ]
+            \item Using the observed frequencies, find an estimate for $p$ (to 3 d.p.). \hfill\textbf{(2 marks)}
+            \item Conduct a goodness-of-fit test at the 2.5\% significance level, and say whether a geometric \\random variable is a good model for the data. \hfill\textbf{(5 marks)}
+        \end{enumerate}
+\end{enumerate}
+\newpage
+
+
+\exercise{}
+\begin{enumerate}
+    \setlength\itemsep{0.5em}
+    \item When analysing the results of a $3\times 2$ contingency table it was found that\vspace{2mm}\\
+        ${\mathlarger\sum _{i=1}^{6}}\dfrac{( O_{i} -E_{i})^{2}}{E_{i}}=2.38$ \vspace{2mm}
+        
+        Write down the number of degrees of freedom and the critical value appropriate to these data in order to carry out a $\chi^2$ test of significance at the 5\%.
+    
+    \item Three different types of locality were studies to see if the ownership, or non-ownership, of a  television was \par
+        or was not related to the locality, ${\mathlarger\sum}\dfrac{( O_{i} -E_{i})^{2}}{E_{i}}$ was evaluated and found to be 13.1. \par
+        Using a 5\% level of significance, carry out a suitable test and state your conclusion.
+        
+    \item In a college, three different groups of students sit the same examination. The results of the examination are classified as Credit, Pass or Fail. In order to test whether or not there is an association between the group, and exam results. The statistic, ${\mathlarger\sum}\dfrac{( O_{i} -E_{i})^{2}}{E_{i}}$ is evaluated and found to be equal to 10.28.\par
+        \begin{enumerate}[label=\bfseries \alph*\space ]
+            \item Explain why there are 4 degrees of freedom in this situation.
+            \item Using a 5\% level of significance, carry out the test and state your conclusion.
+        \end{enumerate}
+    \item The grades of 200 students in both Mathematics and English were studied with the following results.
+        \begin{center}
+            \begin{minipage}[t]{0.55\linewidth}
+                \renewcommand{\arraystretch}{1.2}
+                \begin{tabularx}{\textwidth}{|C|P{10mm}|*3{P{12mm}|}}
+                    \cline{3-5}
+                    \multicolumn{2}{c|}{} & \multicolumn{3}{c|}{\textbf{English grades}}  \\\cline{3-5}
+                    \multicolumn{2}{c|}{}                         & $A$  & $B$  & $C$     \\\hline
+                                                            & $A$ & 17   & 28   & 18      \\\cline{2-5}
+                                                            & $B$ & 38   & 45   & 16      \\\cline{2-5}
+                    \multirow{-3}{*}{\textbf{Maths grades}} & $C$ & 12   & 12   & 14      \\\hline
+                \end{tabularx}
+                \vspace{4mm}
+            \end{minipage}
+        \end{center}
+        Using a 0.05 significance level, test these results to see if there is an association between English and Mathematics results. State your conclusions. \hfill\textbf{(6 marks)}
+        
+    \item The number of trains on time and the number of trains that were late were observed at three different London stations. The results were:
+        \begin{center}
+            \begin{minipage}[t]{0.45\linewidth}
+                \renewcommand{\arraystretch}{1.2}
+                \begin{tabularx}{\textwidth}{|C|P{10mm}|*2{P{18mm}|}}
+                    \cline{3-4}
+                    \multicolumn{2}{c|}{} & \multicolumn{2}{c|}{\textbf{Observed frequency}}             \\\cline{3-4}
+                    \multicolumn{2}{c|}{}                         & \textbf{On time}  & \textbf{Late}    \\\hline
+                                                            & $A$ & 26                & 14               \\\cline{2-4}
+                                                            & $B$ & 30                & 10               \\\cline{2-4}
+                    \multirow{-3}{*}{\textbf{Station}}      & $C$ & 44                & 26               \\\hline
+                \end{tabularx}
+                \vspace{4mm}
+            \end{minipage}
+        \end{center}
+        Using the $\chi^2$ statistic and a significance test at the 5\% level, decide if there is any association between station and lateness. \hfill\textbf{(6 marks)}
+        
+    \item In addition to being classed into grades A, B, C, D and E, 200 students are classified as male or female and their results are summarised in a contingency table.
+    
+        Assuming all expected values are 5 or more , the statistic ${\mathlarger\sum}\dfrac{( O_{i} -E_{i})^{2}}{E_{i}}$ was 14.27.
+        
+        Stating your hypotheses and using 1\% significance level, investigate whether or not gender and grade are associated.
+    
+    \newpage
+    \item In a random sample of 60 articles made in factory $A$, 13 were defective. In factory $B$, 12 out of 40 similar articles were defective.
+        \begin{enumerate}[label=\bfseries \alph*\space ]
+            \item Draw up a contingency table.
+            \item Test at the 0.05 significance level the hypothesis that quality was independent of the factory involved.
+        \end{enumerate}
+        
+        
+    \item During an influenza epidemic, 15 boys and 8 girls became ill out of a year group of 22 boy and 28 girls. Assuming that this group may be treated as a random sample of the age group, test at the 5\% significance level the hypothesis that there is no connection between gender and susceptibility to influenza.
+    
+    \item In a study of marine organisms, a biologist collected specimens from three beaches and counted the number of ales and females in each sample, with the following results:
+        \begin{center}
+            \begin{minipage}[t]{0.5\linewidth}
+                \renewcommand{\arraystretch}{1.2}
+                \begin{tabularx}{\textwidth}{|C|P{15mm}|*3{P{12mm}|}}
+                    \cline{3-5}
+                    \multicolumn{2}{c|}{} & \multicolumn{3}{c|}{\textbf{Beach}}                 \\\cline{3-5}
+                    \multicolumn{2}{c|}{}                               & $A$  & $B$  & $C$     \\\hline
+                                                      & \textbf{Male}   & 46   & 80   & 40      \\\cline{2-5}
+                    \multirow{-2}{*}{\textbf{Gender}} & \textbf{Female} & 54   & 120  & 160     \\\hline
+                \end{tabularx}
+                \vspace{4mm}
+            \end{minipage}
+        \end{center}
+        Using a significance level of 5\%, test these results to see if there is any association between the choice of beach and the gender of the organisms. \hfill\textbf{(6 marks)}
+        
+    \item A research worker studying the ages of adults and the number of credit cards they possess obtained the results shown below:
+        \begin{center}
+            \begin{minipage}[t]{0.42\linewidth}
+                \renewcommand{\arraystretch}{1.2}
+                \begin{tabularx}{\textwidth}{|C|P{15mm}|*2{P{16mm}|}}
+                    \cline{3-4}
+                    \multicolumn{2}{c|}{} & \multicolumn{2}{c|}{\textbf{Number of cards}}  \\\cline{3-4}
+                    \multicolumn{2}{c|}{}                         & $\leq$ 3  & > 3        \\\hline
+                                                      & $\leq$ 30 & 74        & 20         \\\cline{2-4}
+                    \multirow{-2}{*}{\textbf{Age}}    & > 30      & 50        & 35         \\\hline
+                \end{tabularx}
+                \vspace{4mm}
+            \end{minipage}
+        \end{center}
+        Using the $\chi^2$ statistic and a significance test at the 5\% level to decide whether or not there is an association between age and number of credit cards possessed. \hfill\textbf{(6 marks)}
+        
+    \item Members of four local gyms were surveyed to find out if they had injured themselves while working out in the last month. The results are summarised in the below:
+        \begin{center}
+            \begin{minipage}[t]{0.7\linewidth}
+                \renewcommand{\arraystretch}{1.2}
+                \begin{tabularx}{\textwidth}{|X|*5{P{15mm}|}}
+                    \cline{2-6}
+                    \multicolumn{1}{c|}{} & \multicolumn{5}{c|}{\textbf{Gym}}                       \\\cline{2-6}
+                    \multicolumn{1}{c|}{}           & $A$  & $B$  & $C$  & $D$  & \textbf{Total}    \\\hline
+                                 \textbf{Injured}   & 15   & 4    & 8    & 7    & 34                \\\hline
+                                 \textbf{Uninjured} & 222  & 254  & 167  & 188  & 831               \\\hline
+                                 \textbf{Total}     & 237  & 258  & 175  & 195  & 865               \\\hline
+                \end{tabularx}
+                \vspace{4mm}
+            \end{minipage}
+        \end{center}
+        A test is carried out at the 5\% significance level to determine whether or not there is an association between injuries and choice of gym.
+        \begin{enumerate}[label=\bfseries \alph*\space ]
+            \item State the null hypothesis. \hfill\textbf{(1 mark)}
+            \item Show that the expected frequency of member injured at gym $C$ is 6.88. \hfill\textbf{(1 mark)}
+            \item Calculate the test statistic for this test, and state with reasons whether or not the null hypothesis is rejected. \hfill\textbf{(5 marks)}
+        \end{enumerate}
+    
+    \newpage    
+    \item Millie wants to investigate whether students who studied different sciences at university get paid the same when they get a job. She surveys science graduates who graduated from university in the last 5 years, and records their salary information. The results are recorded in the table below.
+        \begin{center}
+            \begin{minipage}[t]{\linewidth}
+                \renewcommand{\arraystretch}{1.2}
+                \begin{tabularx}{\textwidth}{|C|P{20mm}|*4{P{20mm}|}*2{P{15mm}|}}
+                    \cline{3-8}
+                    \multicolumn{2}{c|}{} & \multicolumn{6}{c|}{\textbf{Salary}}                         \\\cline{3-8}
+                    \multicolumn{2}{c|}{}                                  & \textbf{£0-£20k}  & \textbf{£20k-£40k}  & \textbf{£40k-£60k} & \textbf{£60k-£80k} & \textbf{>£80k} & \textbf{Total}   \\\hline
+                                                      & \textbf{Biology}   & 4   & 69   & 23 & 5 & 3 & 104      \\\cline{2-8}
+                                                      & \textbf{Chemistry} & 3   & 72   & 27 & 4 & 2 & 108      \\\cline{2-8}
+                                                      & \textbf{Physics}   & 2   & 68   & 32 & 5 & 4 & 111      \\\cline{2-8}                                                      
+                    \multirow{-4}{*}{\shortstack{\textbf{Science}\\\textbf{studied}}} & \textbf{Total}     & 9   & 209  & 82 & 14 & 9 & 323    \\\hline
+                \end{tabularx}
+                \vspace{3mm}
+            \end{minipage}
+        \end{center}
+        She tests at the 5\% significance level whether there is an association between the science studied and pay.
+        
+        \begin{minipage}{0.5\textwidth}
+            \begin{enumerate}[label=\bfseries \alph*\space ]
+                \item State the null and alternative hypotheses for \\this test \hfill\textbf{(1 mark)}
+                \item Calculate the test statistic for this test, and state\\ with reasons whether or not the null\\ hypothesis is rejected  \hfill\textbf{(5 marks)}
+            \end{enumerate}
+        \end{minipage}
+        \begin{table}[!ht]
+            \begin{tabularx}{\dimexpr\textwidth}{Xp{2.4in}}
+                {} & \vspace{-3.5cm}\begin{mybox2}[colbacktitle=green]{Problem-solving}
+                    If any of the expected frequencies are less than 5 you have to pool columns before calculating $X^2$.
+                \end{mybox2}
+            \end{tabularx}
+        \end{table}\vspace{-6mm}
+\end{enumerate}
+
+
+\newpage
+\exercise{(Mixed Exercise)}
+\begin{enumerate}
+    \setlength\itemsep{0.5em}
+    \item The random variable $Y$ has a $\chi^2$ distribution with 10 degrees of freedom. \\
+        Find $y$ such that P$(Y<y)$ = 0.99.
+
+    \item The random variable $X$ has a chi-squared distribution with 8 degrees of freedom. \\
+        Find $x$ such that P$(X>x)$ = 0.05.
+
+    \item As part of an investigation into visits to a Health Centre, a $5 \times 3$ contingency table was constructed. \\
+        A $\chi^2$ test of significance at the 5\% level is to be carried out on the table. 
+        
+        Write down the number of degrees of freedom and the critical region appropriate to this test.
+        
+    \item Data are collected in the form of a $4 \times 4$ contingency table.\par
+        To carry out a $\chi^2$ test of significance one of the rows is amalgamated with another row and the resulting \par value of ${\mathlarger\sum}\dfrac{(O-E)^{2}}{E}$ was calculated.
+        
+        Write down the number of degrees of freedom and the critical value of $\chi^2$ appropriate to this test, assuming a 5\% significance level.
+    
+    \item A new drug to treat the common cold was used with a randomly selected group of 100 volunteers. Each was given the drug and their health was monitored to see if they caught a cold. A randomly selected control group of 100 volunteers was treated with a dummy pill. The results are shown in the table below.
+        \begin{center}
+            \begin{minipage}[t]{0.45\linewidth}
+                \begin{tabularx}{\textwidth}{|X|*2{P{20mm}|}}
+                    \cline{2-3}
+                    \multicolumn{1}{c|}{}  & \textbf{Cold} & \textbf{No cold}      \\\hline
+                    \textbf{Drug}          & 34            & 66                    \\\hline
+                    \textbf{Dummy pill}    & 45            & 55                    \\\hline
+                \end{tabularx}
+                \vspace{3mm}
+            \end{minipage}
+        \end{center}
+        Using a 5\% significant level, test whether or not the chance of catching a cold is affected \\by taking the new drug. State your hypotheses carefully. \hfill\textbf{(6 marks)}
+        
+    \item Breakdowns on a certain stretch of motorway were recorded each day for 80 consecutive days. \\The results are summarised in the table below.
+        \begin{center}
+        \begin{minipage}[t]{0.6\linewidth}
+            \begin{tabularx}{\textwidth}{|X|*4{>{\centering\arraybackslash}p{10mm}|}}
+                \hline
+                \textbf{Number of breakdowns} & 0 & 1 & 2 & >2                          \\\hline
+                \textbf{Frequency} & 38 & 32 & 10 & 0       \\\hline
+            \end{tabularx}
+            \vspace{4mm}
+        \end{minipage}
+        \end{center}
+        
+        It is suggested that the number of breakdowns per day can be modelled by a Poisson distribution. \vspace{2mm}\\
+        Using 5\% significance level, test whether or not the Poisson distribution is a suitable \\model for these data. State your hypotheses clearly.\hfill\textbf{(9 marks)}
+        
+    \item A survey in a college was commissioned to investigate whether or not there was any association between gender and passing a driving test. A group of 50 males and 50 females were asked whether they passed or failed their driving test at the first attempt. All the students asked had taken the test. \\The results were as follows.
+        \begin{center}
+            \begin{minipage}[t]{0.4\linewidth}
+                \begin{tabularx}{\textwidth}{|X|*2{P{20mm}|}}
+                    \cline{2-3}
+                    \multicolumn{1}{c|}{}  & \textbf{Pass} & \textbf{Fail}         \\\hline
+                    \textbf{Male}          & 23            & 27                    \\\hline
+                    \textbf{Female}        & 32            & 18                    \\\hline
+                \end{tabularx}
+                \vspace{3mm}
+            \end{minipage}
+        \end{center}
+        Stating your hypotheses clearly test, at the 10\% level, whether or not there is any evidence of an association between gender and passing a driving test at the first attempt. \hfill\textbf{(6 marks)}
+    
+    \newpage
+    \item Successful contestants in a TV game show were allowed to select from one of five boxes, four of which contained nothing. The boxes were numbered 1 to 5, and, when the show had run for 100 weeks, the choices made by the contestants were analysed with the following results:
+        \begin{center}
+            \begin{minipage}[t]{0.55\linewidth}
+                \begin{tabularx}{\textwidth}{|X|*5{>{\centering\arraybackslash}p{10mm}|}}
+                    \hline
+                    \textbf{Box number} & 1  & 2  & 3  & 4  & 5        \\\hline
+                    \textbf{Frequency}  & 20 & 16 & 25 & 18 & 21       \\\hline
+                \end{tabularx}
+                \vspace{2mm}
+            \end{minipage}
+        \end{center}
+        \begin{enumerate}[label=\bfseries \alph*\space ]
+            \item Explain why these data could possibly be modelled by a discrete uniform distribution.
+            \item Using a significance level of 5\%, test to see if the discrete uniform distribution is a good model\\ in this particular case.
+        \end{enumerate}
+
+    \item A pesticide was tested by applying it in the form of a spray to 50 samples of five flies.\\ The number of dead flies after 1 hour were then counted with the following results:
+        \begin{center}
+            \begin{minipage}[t]{0.7\linewidth}
+                \begin{tabularx}{\textwidth}{|X|*6{>{\centering\arraybackslash}p{10mm}|}}
+                    \hline
+                    \textbf{Number of dead flies} & 0 & 1 & 2 & 3  & 4  & 5       \\\hline
+                    \textbf{Frequency}            & 1 & 1 & 5 & 11 & 24 & 8       \\\hline
+                \end{tabularx}
+                \vspace{2mm}
+            \end{minipage}
+        \end{center}
+        \begin{enumerate}[label=\bfseries \alph*\space ]
+            \item Calculate the probability that a fly dies when sprayed. \hfill\textbf{(2 marks)}
+            \item Using a significance level of 5\%, test to see if these data could be modelled by a \\binomial distribution. \hfill\textbf{(5 marks)}
+        \end{enumerate}
+        
+    \item The number of accidents per week at a certain road junction was monitored for four years.\\
+        The results obtained are summarised in the table.
+        \begin{center}
+            \begin{minipage}[t]{0.55\linewidth}
+                \begin{tabularx}{\textwidth}{|X|*4{>{\centering\arraybackslash}p{10mm}|}}
+                    \hline
+                    \textbf{Number of accidents}  & 0   & 1  & 2  & > 2     \\\hline
+                    \textbf{Frequency}            & 112 & 56 & 40 & 0       \\\hline
+                \end{tabularx}
+                \vspace{2mm}
+            \end{minipage}
+        \end{center}
+        Using a 5\% level of significance, carry of out a $\chi^2$ test of the hypothesis that the number \\
+        of accidents per week has a Poisson distribution. \hfill\textbf{(9 marks)}
+    
+    \item Samples of stones were taken at two sites on a beach which were 1 mile apart. The rock types of the stones were found and classified as igneous, sedimentary or other types, with the following results.
+        \begin{center}
+            \begin{minipage}[t]{0.52\linewidth}
+                \renewcommand{\arraystretch}{1.1}
+                \begin{tabularx}{\textwidth}{|C|P{25mm}|*2{P{14mm}|}}
+                    \cline{3-4}
+                    \multicolumn{2}{c|}{} & \multicolumn{2}{c|}{\textbf{Site}}  \\\cline{3-4}
+                    \multicolumn{2}{c|}{}                                       & $A$  & $B$        \\\hline
+                                                         & \textbf{Igneous}     & 30   & 10         \\\cline{2-4}
+                                                         & \textbf{Sedimentary} & 55   & 35         \\\cline{2-4}
+                    \multirow{-3}{*}{\textbf{Rock type}} & \textbf{Other}       & 15   & 15         \\\hline
+                \end{tabularx}
+                \vspace{4mm}
+            \end{minipage}
+        \end{center}
+    
+    \item A small shop sells a particular item at a fairly steady yearly rate. When looking at the weekly sales it was found that the number sold varied. The results for the 50 weeks the shop was open were as shown in the table.
+        \begin{center}
+            \begin{minipage}[t]{0.9\linewidth}
+                \begin{tabularx}{\textwidth}{|X|*{10}{>{\centering\arraybackslash}p{10mm}|}}
+                    \hline
+                    \textbf{Weekly sales}  & 0 & 1 & 2 & 3 & 4  & 5 & 6 & 7 & 8 & > 8   \\\hline
+                    \textbf{Frequency}     & 0 & 4 & 7 & 8 & 10 & 6 & 7 & 4 & 4 & 0     \\\hline
+                \end{tabularx}
+                \vspace{2mm}
+            \end{minipage}
+        \end{center}
+        \begin{enumerate}[label=\bfseries \alph*\space ]
+            \item Find the mean number of sales per week. \hfill\textbf{(2 marks)}
+            \item Using a significance level of 5\%, test to see if these could be modelled by a \\Poisson distribution. \hfill\textbf{(8 marks)}
+        \end{enumerate}
+        
+    \item A study was done of how many students in a college were left-handed and how many were right-handed. As well as left- or right-handedness the gender of each persion was also recorded with the following results.
+        \begin{center}
+            \begin{minipage}[t]{0.45\linewidth}
+                \begin{tabularx}{\textwidth}{|X|*2{P{25mm}|}}
+                    \cline{2-3}
+                    \multicolumn{1}{c|}{}  & \textbf{Left-handed} & \textbf{Right-handed}         \\\hline
+                    \textbf{Male}          & 100                  & 600                           \\\hline
+                    \textbf{Female}        & 80                   & 800                           \\\hline
+                \end{tabularx}
+                \vspace{3mm}
+            \end{minipage}
+        \end{center}
+        Use a significance test at the 0.05 level to see if there is an association between gender\\ and left- and right-handedness \hfill\textbf{(6 marks)}
+        
+    \newpage
+    \item A school science department collected data on which science subject students found the most interesting. A random sample of 300 students gave the following results.
+        \begin{center}
+            \begin{minipage}[t]{0.65\linewidth}
+                \renewcommand{\arraystretch}{1.2}
+                \begin{tabularx}{\textwidth}{|C|P{15mm}|*3{P{20mm}|}}
+                    \cline{3-5}
+                    \multicolumn{2}{c|}{} & \multicolumn{3}{c|}{\textbf{Subject}}                                                      \\\cline{3-5}
+                    \multicolumn{2}{c|}{}                               & \textbf{Physics} & \textbf{Biology} & \textbf{Chemistry}     \\\hline
+                                                      & \textbf{Male}   & 74               & 28               & 68                     \\\cline{2-5}
+                    \multirow{-2}{*}{\textbf{Gender}} & \textbf{Female} & 45               & 40               & 45                     \\\hline
+                \end{tabularx}
+                \vspace{4mm}
+            \end{minipage}
+        \end{center}
+        A test is carried out at the 1\% level of significance to determine whether or not there is an association between gender and preferred subject.
+        \begin{enumerate}[label=\bfseries \alph*\space ]
+            \item State the null hypothesis for this test. \hfill\textbf{(1 mark)}
+            \item Show that the expected frequency for females choosing biology is 29.47 (to 2 d.p.) \hfill\textbf{(1 mark)}
+            \item Calculate the remaining expected frequencies, and the test statistic for this test. \hfill\textbf{(3 marks)}
+            \item State whether or not the null hypothesis should be rejected. Justify your answer. \hfill\textbf{(2 marks)}
+            \item Would the test be rejected if instead the test were carried out at the 5\% level of\\ significance? \hfill\textbf{(1 mark)}
+        \end{enumerate}
+        
+    \item The discrete random variable $X$ follows a Poisson distribution with mean 2.15.
+        \begin{enumerate}[label=\bfseries \alph*\space ]
+            \item Write not the values of:\vspace{0.5mm}
+            \begin{enumerate}[label=\bfseries \roman*\space]
+                \item P$(X=1)$
+                \item P$(X>2)$ \hfill\textbf{(2 marks)}
+            \end{enumerate}
+        \end{enumerate}
+        The manager at a call centre recorded the number of calls coming in each minuted between noon and 1pm.\vspace{-1mm}
+        \begin{center}
+            \begin{minipage}[t]{0.85\linewidth}
+                \begin{tabularx}{\textwidth}{|X|*8{P{11mm}|}}
+                    \hline
+                    \textbf{Number of calls}  & 0  & 1  & 2  & 3  & 4 & 5 & 6 &\textbf{Total}   \\\hline
+                    \textbf{Frequency}        & 10 & 12 & 14 & 12 & 8 & 3 & 1 & 60              \\\hline
+                \end{tabularx}
+                \vspace{2mm}
+            \end{minipage}
+        \end{center}
+        \begin{enumerate}[resume, label=\bfseries \alph*\space ]
+            \item Show that the average number of calls received in a minute is 2.15 \hfill\textbf{(1 mark)}
+        \end{enumerate}\vspace{-2mm}
+        The manager believes that the Poisson distribution may be good model for the numer of calls arriving each minute. She uses a Poisson distribution with mean 2.15 to calculate expected frequencies as follows.\vspace{-1mm}
+        \begin{center}
+            \begin{minipage}[t]{0.85\linewidth}
+                \begin{tabularx}{\textwidth}{|X|*6{P{10mm}|}P{18mm}|}
+                    \hline
+                    \textbf{Number of calls}     & 0    & 1     & 2   & 3     & 4    & 5    & 6 or more   \\\hline
+                    \textbf{Expected Frequency}  & 6.99 & 15.03 & $a$ & 11.58 & 6.22 & 2.67 & $b$         \\\hline
+                \end{tabularx}
+                \vspace{2mm}
+            \end{minipage}
+        \end{center}
+        \begin{enumerate}[resume, label=\bfseries \alph*\space ]
+            \item Find the values of $a$ and $b$ to two decimal places. \hfill\textbf{(2 marks)}
+        \end{enumerate}\vspace{-2mm}
+        The manager will test, at the 5\% level of significance, if the data can be modelled by a Poisson distribution as she suspects.
+        \begin{enumerate}[resume, label=\bfseries \alph*\space ]
+            \item State the null and alternative hypotheses for this test. \hfill\textbf{(1 mark)}
+            \item Explain why the last two cells in the expected frequency table should be combined \\when calculating the test statistic for this test. \hfill\textbf{(1 mark)}
+            \item Calculate the test statistic and state the conclusion for this test. State clearly the critical \\value used in the test. \hfill\textbf{(4 marks)}
+        \end{enumerate}
+        
+    \newpage
+    \item David doesn't have a car. If it's raining in the morning when he has to go to work, he calls his friends one by one to see if anyone can give him a lift. Since starting his job it has rained on 255 mornings. \\David has recorded the number of calls he had to make on each of these morning before finding a willing driver.\vspace{-1mm}
+        \begin{center}
+        \begin{minipage}[t]{0.8\linewidth}
+            \begin{tabularx}{\textwidth}{|X|*9{>{\centering\arraybackslash}p{10mm}|}}
+                \hline
+                \textbf{Number of calls} & 1   & 2  & 3  & 4  & 5  & 6 & 7 & \textbf{Total}  \\\hline
+                \textbf{Frequency}       & 130 & 54 & 24 & 28 & 13 & 5 & 1 & 255             \\\hline
+            \end{tabularx}
+            \vspace{4mm}
+        \end{minipage}
+        \end{center}\vspace{-2mm}
+        Assume that each of David's friends is equally likely to offer him a lift, and that David will \\never run out of friends to call. (David is extremely popular.)
+        \begin{enumerate}[label=\bfseries \alph*\space ]
+            \item Suggest a suitable distribution to model the number of calls made by David on\\ a rainy morning.  \hfill\textbf{(1 mark)}
+            \item Use the observed data to estimate any parameters necessary for your \\chosen distribution.        \hfill\textbf{(2 marks)}
+            \item Carry out a goodness-of-fit test at the 5\% significance level for your chosen \\distribution.    \hfill\textbf{(6 marks)}
+        \end{enumerate}
+
+    \item Wilfred calls his parents every weekend to tell them about his week. Unfortunately Wilfred is very forgetful, and can't remember if the last digit of his parents phone number is 2, 5 or 7. When he wants to call his parents, he simply guesses the last number, and wait to see if his parents answer. If they don't he tries again.
+    
+        The number of times Wilfred dials before he gets through to his parents throughout the year is recorded in the table below.\vspace{-1mm}
+        \begin{center}
+            \begin{tabularx}{0.75\textwidth}{|X|*6{P{12mm}|}}
+                \hline
+                \textbf{Number of attempts} & 1  & 2  & 3  & 4 & 7 & \textbf{Total}  \\\hline
+                \textbf{Frequency observed} & 27 & 10 & 10 & 4 & 1 & 52              \\\hline
+            \end{tabularx}
+        \end{center}\vspace{3mm}
+        Wilfred claims that the number of attempts made each time he calls his parents can be modelled as a geometric distribution with the probability of success $\frac{1}{3}$.
+        \begin{enumerate}[label=\bfseries \alph*\space ]
+            \item Give one criticism of Wilfred's model \hfill\textbf{(1 mark)}
+            \item Test Wilfred's claim at the 5\% significance level. \hfill\textbf{(6 marks)}
+        \end{enumerate}
 \end{enumerate}
 
 
 
+
+
 \newpage
-\fakesubsection{Exercises}
+\fakesubsection{Answers}
 \exercise{(Answers)}
-
-
+\begin{enumerate}
+    \setlength\itemsep{0.5em}
+    \item H\textsubscript{0}: There is no difference between the observed and expected distributions. \\
+        H\textsubscript{1}: There is a difference between the observed and expected distributions.
+    \item \begin{enumerate}[label=\bfseries \alph*\space ]
+            \item H\textsubscript{0}: The observed distribution is the same as the discrete uniform distribution. \\
+                H\textsubscript{1}: The observed distribution is not the same as the discrete uniform distribution.
+            \item $X^2=1.6$
+        \end{enumerate}
+    \item \begin{enumerate}[label=\bfseries \alph*\space ]
+            \item H\textsubscript{0}: There is no difference between the observed distribution and the discrete uniform distribution.
+        \end{enumerate}
+\end{enumerate}
 \end{document}

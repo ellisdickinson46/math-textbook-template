@@ -15,7 +15,7 @@
 \usepackage[inline]{enumitem}
 \usepackage{multicol}
 \usepackage{fancyhdr}
-\usepackage{booktabs, tabularx}
+\usepackage{booktabs, multirow, tabularx}
 \usepackage{mathtools}
 \usepackage{tasks}
 \usepackage{anyfontsize}
@@ -350,3 +350,22 @@
 % Additional tabular column types
 % ----------------------------------------------
 \newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{C}{>{\centering\arraybackslash}X}
+
+
+
+% Additional Tabular Lines
+% ----------------------------------------------
+\makeatletter
+\def\thickhline{%
+  \noalign{\ifnum0=`}\fi\hrule \@height \thickarrayrulewidth \futurelet
+   \reserved@a\@xthickhline}
+\def\@xthickhline{\ifx\reserved@a\thickhline
+               \vskip\doublerulesep
+               \vskip-\thickarrayrulewidth
+             \fi
+      \ifnum0=`{\fi}}
+\makeatother
+
+\newlength{\thickarrayrulewidth}
+\setlength{\thickarrayrulewidth}{2\arrayrulewidth}
