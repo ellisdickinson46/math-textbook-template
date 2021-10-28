@@ -1410,7 +1410,132 @@
             \item $X^2=1.6$
         \end{enumerate}
     \item \begin{enumerate}[label=\bfseries \alph*\space ]
-            \item H\textsubscript{0}: There is no difference between the observed distribution and the discrete uniform distribution.
+            \item H\textsubscript{0}: There is no difference between the observed distribution and the discrete uniform distribution. \\
+                H\textsubscript{1}: There is a difference between the observed distribution and the discrete uniform distribution.
+            \item 150
+            \item $X^2=14.33$
+        \end{enumerate}
+    \item \begin{enumerate}[label=\bfseries \alph*\space ]
+            \item \begin{tabularx}{0.4\textwidth}{|X|*2{P{12mm}|}}
+                    \hline
+                    \textbf{Mutation present}   & Yes  & No  \\\hline
+                    \textbf{Expected frequency} & 120  & 40  \\\hline
+                \end{tabularx}\vspace{6mm}
+            \item H\textsubscript{0}: There is no difference between the observed and expected distributions.
+                H\textsubscript{1}: There is a difference between the observed and expected distribtuions.
+            \item $X^2=0.3$
+        \end{enumerate}
+    \item \begin{enumerate}[label=\bfseries \alph*\space ]
+            \item \begin{tabularx}{0.55\textwidth}{|X|*2{P{12mm}|}}
+                    \hline
+                    \textbf{Result}                             & \textbf{H} & \textbf{T}  \\\hline
+                    \textbf{Expected frequency for fair coin}   & 25          & 25         \\\hline
+                    \textbf{Expected frequency for biased coin} & 30          & 20         \\\hline
+                \end{tabularx}\vspace{6mm}
+            \item $X_{\text{fair}}^2=0.72$, $X_{\text{biased}}^2=0.33$
+            \item Since a lower goodness of fit score is better, it is more likely John was flipping the biased coin.
+        \end{enumerate}
+    \item Goodness of fit for Welsh men: 2.074, goodness of fit for Welsh women: 4.076. Therefore the distribution for English adults is a closer match for Welsh men than women.
+\end{enumerate}
+
+
+\exercise{(Answers)}
+\begin{enumerate}
+    \setlength\itemsep{0.5em}
+    \item We calculate $X^2=4.33$. There are 5 degrees of freedom. $\chi_5^2(5\%)=11.070$, so there is insufficient evidence to reject the null hypothesis.
+    \item We expect 24 winning tickets and 96 losing. $X^2=4.21875$, whereas $\chi_1^2(5\%)=3.841$, so we reject the null hypothesis, the tombola is unfair.
+    \item $X^2=8.05$, whereas $\chi_2^2(2.5\%)=7.378$, so we reject the null hypothesis, the expect distribution does not fit the data.
+    \item \begin{enumerate}[label=\bfseries \alph*\space ]
+            \item Group together observations for `4 dogs', `5 dogs' and `>5 dogs', so that the expected frequency\\ exceeds 5. There are then 5 observations, and 1 constraint, so 4 degrees of freedom.
+            \item $X^2=12.236$, whereas $\chi_4^2(5\%)=9.488$. Therefore we reject the null hypothesis, expected distribution doesn't fit the data. 
+        \end{enumerate}
+    \item $X^2=737.6$, whereas $\chi_5^2(5\%)=11.071$, so we reject the null hypothesis that the distribution from 2000 is a good model for the data from 2015.
+\end{enumerate}
+
+
+\newpage
+\exercise{(Answers)}
+\begin{enumerate}
+    \setlength\itemsep{0.5em}
+    \item \begin{enumerate}[label=\bfseries \alph*\space ]
+            \item H\textsubscript{0}: the data may be modelled by Po(2). \\
+                $\chi_5^2(5\%)=11.070$,                                  \\ 
+                $X^2=4.10$                                               \\
+                No reason to reject H\textsubscript{0}
+            \item Reduction by 1
+        \end{enumerate}
+    \item Expected values 17, H\textsubscript{0}: deliveries are uniformly distributed. \\
+        $\chi_5^2(5\%)=11.070$, $X^2=5.765$ \\
+        No reason to reject H\textsubscript{0}.
+    \item \begin{enumerate}[label=\bfseries \alph*\space ]
+            \item $R=43.75$ \hspace{5mm} $S=54.69$ \hspace{5mm} $T=43.75$
+            \item H\textsubscript{0}: A binomial model is a suitable model       \\
+                H\textsubscript{1}: A binomial model is not a suitable model     \\
+                $\chi^2$ < c.v. so accept H\textsubscript{0}                     
+                
+                Conclude no reason to doubt data are from B(0, 0.5)                
+        \end{enumerate}
+    \item The expected frequency are (grouping to ensure each expected frequency is at least 5) \vspace{2mm}\\
+        \begin{tabularx}{0.65\textwidth}{|X|*5{P{12mm}|}}
+            \hline
+            \textbf{$k$}                  & 1   & 2  & 3    & 4     & $\geq5$    \\\hline
+            \textbf{Expected frequency}   & 180 & 72 & 28.8 & 11.52 & 7.68       \\\hline
+        \end{tabularx}\vspace{4mm}
+        
+        From which we calculate $X^2=14.705$. \\
+        $\chi_4^2(1\%)=13.277$ therefore we reject the null hypothesis.
+    \item The expected frequencies are \vspace{2mm}\\
+        \begin{tabularx}{0.73\textwidth}{|X|*6{P{12mm}|}}
+            \hline
+            \textbf{$k$}                  & 1  & 2  & 3    & 4    & 5     & $\geq6$     \\\hline
+            \textbf{Expected frequency}   & 40 & 24 & 14.4 & 8.64 & 5.184 & 7.776       \\\hline
+        \end{tabularx}\vspace{4mm}
+        
+        From this we calculate $X^2=7.966$.                              \\
+        $\chi_2^5(5\%)=11.071$, so we do not reject the null hypothesis. \\
+        Geo(0.4) is a good model for the data.
+    \item \begin{enumerate}[label=\bfseries \alph*\space ]
+            \item Assuming consecutive letters are independent and equally likely, we could model the number of \\characters until the next vowel using a Geo($\tfrac{5}{26}$) distribution.
+            \item The expected frequencies are \vspace{2mm}\\
+                \begin{tabularx}{0.73\textwidth}{|X|*6{P{12mm}|}}
+                    \hline
+                    \textbf{$k$}                  & 1     & 2     & 3    & 4    & 5    & $\geq6$     \\\hline
+                    \textbf{Expected frequency}   & 14.42 & 11.65 & 9.41 & 7.60 & 6.14 & 25.78       \\\hline
+                \end{tabularx}\vspace{4mm}
+                
+                From this we calculate $X^@=2.418$.\\
+                Here are 5 degrees of freedom, and $\chi_5^2(5\%)=11.071$, so we do not reject the null hypothesis, \\the data could be modelled by a Geo($\tfrac{5}{26}$) distribution.
+            \item e.g. Experiment does not tell us anything about the distribution \\within either the consonant or the vowels.
+        \end{enumerate}
+    \item \begin{enumerate}[label=\bfseries \alph*\space ]
+            \item e.g. It is unlikely that each guess will be independent of the others.
+            \item If Wilfred is equally likely to select the digits 2, 5 or 7, then he has a $\tfrac{1}{3}$ chance of getting the right number each time he calls his parents. So the number of calls can be modelled by a Geo($\tfrac{1}{3}$) distribution. The expected values are \vspace{2mm}\\
+                \begin{tabularx}{0.65\textwidth}{|X|*5{P{12mm}|}}
+                    \hline
+                    \textbf{Attempts}             & 1     & 2     & 3   & 4    & $\geq5$     \\\hline
+                    \textbf{Expected frequency}   & 17.33 & 11.56 & 7.7 & 5.14 & 10.27       \\\hline
+                \end{tabularx}\vspace{4mm}
+                
+                From which we can calculate $X^2=14.914$. \\
+                There are four degrees of freedom and $\chi_4^2=9.488$, so we reject the null hypothesis. \\
+                The evidence suggests Wilfred may not be equally likely to pick up any of the numbers 2, 5 or 7.
         \end{enumerate}
 \end{enumerate}
 \end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
