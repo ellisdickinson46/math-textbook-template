@@ -87,6 +87,32 @@
     \vspace{1mm}
 \end{mybox2}
 
+\begin{mybox2}[colbacktitle=green]{Key Information (Continued)}
+    \begin{enumerate}
+        \setcounter{enumi}{8}
+        \item If $n$ is the number of cells after combining: \vspace{1mm}\\
+            \begin{minipage}[t]{0.8\linewidth}
+                \renewcommand{\arraystretch}{1.1}
+                \begin{tabularx}{\textwidth}{|X|*2{P{35mm}|}}
+                \hline
+                                                            & \multicolumn{2}{c|}{\bfseries Degrees of freedom}                   \\\cline{2-3}
+                    \multirow{-2}{*}{\textbf{Station}}      & \textbf{Parameters Known}         & \textbf{Parameters not known}   \\\hline
+                    \textbf{Discrete uniform} & $n-1$ & \\\hline
+                    \textbf{Binomial} & $n-1$ & $n-2$ \\\hline
+                    \textbf{Poisson} & $n-1$ & $n-2$ \\\hline
+                    \textbf{Geomtric} & $n-1$ & $n-2$ \\\hline
+                \end{tabularx}
+                \vspace{6mm}
+            \end{minipage}
+        
+        \item For contingency tables:
+            
+            \hspace{1cm}$\text{\bfseries expected frequency}=\dfrac{\text{row total}\times\text{column total}}{\text{grand total}}$
+            
+            for an $h\times k$ table, the number of degrees of freedom $v=(h-1)(k-1)$
+    \end{enumerate}
+\end{mybox2}
+
 \newpage
 \pagestyle{branded}
 
@@ -97,7 +123,7 @@
 
 \begin{mybox2}[colbacktitle=WildStrawberry]{Summary}
     \setlength{\parskip}{0.5\baselineskip}%
-    \textbf{Goodness of fit} is concerned with measuring how well an observed frequency distribution fits to a known distribution.
+    \textbf{Goodness of fit} is concerned with measuring how well an observed frequency distribution fits to a known \\distribution.
     
     Suppose you take a dice and throw it 120 times. You might get results like these:
     \begin{center}\vspace{-2mm}
@@ -383,7 +409,7 @@
     \end{minipage}
     \end{center}
     
-    Can these results be modelled using the Poisson distribution with mean 2.2, show how you decide using a 5\% level of significance.
+    Can these results be modelled using the Poisson distribution with mean 2.2. \\Show how you decide using a 5\% level of significance.
 \end{examplebox}\vspace{1mm}
 \begin{minipage}[t]{\linewidth}
     \renewcommand{\arraystretch}{1.5}%
@@ -436,13 +462,13 @@
     \end{itemize}
     
     \textbf{Poisson} \\
-    If $ X\sim Po(\lambda)$, the sample mean $X \approx \lambda$. \\
+    If $ X\sim \text{\rmfamily Po}(\lambda)$, the sample mean $X \approx \lambda$. \\
     
     \textbf{Binomial} \\
-    If $X \sim B(n, p)$, the sample mean $\overline{X} \approx np$. \\
+    If $X \sim \text{\rmfamily B}(n, p)$, the sample mean $\overline{X} \approx np$, \hspace{5mm}$p\approx \dfrac{\overline{X}}{n}$ \\
     
     \textbf{Geometric} \\
-    If $X \sim B(p)$, the sample mean $\overline{X} \approx \dfrac{1}{p}$
+    If $X \sim \text{\rmfamily B}(p)$, the sample mean $\overline{X} \approx \dfrac{1}{p}$, \hspace{10mm}$p\approx \dfrac{1}{\overline{X}}$
 \end{mybox2}
 
 \begin{examplebox}{}{}
@@ -824,9 +850,9 @@
         
         Calculate the expected frequencies and, using a 5\% significance level, conduct a \\goodness-of-fit test. \hfill\textbf{(6 marks)}
     \newpage
-    \item Michael has a pet monkey and want to test the theory that, given a typewriter in enough time, the monkey will eventually type out the complete works of Shakespeare. Unfortunately the experiment is a total disaster, and the monkey has succeeded only in producing a seemingly random string of alphabetic characters!
+    \item Michael has a pet monkey and wants to test the theory that, given a typewriter in enough time, the monkey will eventually type out the complete works of Shakespeare. Unfortunately, the experiment is a total disaster, and the monkey has succeeded only in producing a seemingly random string of alphabetic characters!
         
-        Michael decides instead he will now see how random the string of characters is. He reads the string looking for vowels. Each time he finds a vowel, he counts the number of letters until the next vowel. The results are recorded in the table below.\vspace{3mm}\\
+        Michael decides instead he will see how random the string of characters is. He reads the string looking for vowels. Each time he finds a vowel, he counts the number of letters until the next vowel. The results are recorded in the table below.\vspace{3mm}\\
         \begin{tabularx}{0.9\textwidth}{|X|*7{P{7mm}|}P{16mm}|P{12mm}|}
             \hline
             \textbf{Characters to the next vowel} & 1  & 2  & 3  & 4  & 5 & 6 & 7 & 8 or more & \textbf{Total}  \\\hline
@@ -839,7 +865,7 @@
             \item Conduct a goodness of fit test, at the 5\% significance level, to see if Michael's belief\\ is supported by the data.\hfill\textbf{(5 marks)}
             \item Describe one limitation of using this experiment to test Michael's belief. \hfill\textbf{(1 mark)}
         \end{enumerate}
-    \item Wilfred calls his parents every weekend to tell them about his week. Unfortunately Wilfred is very forgetful, and can't remember if the last digit of his parents phone number is 2, 5 or 7. When he wants to call his parents, he simply guesses the last number, and wait to see if his parents answer. If they don't he tries again.
+    \item Wilfred calls his parents every weekend to tell them about his week. Unfortunately Wilfred is very forgetful, and can't remember if the last digit of his parents phone number is 2, 5 or 7. When he wants to call his parents, he simply guesses the last number, and waits to see if his parents answer. If they don't he tries again.
     
         The number of times Wilfred dials before he gets through to his parents throughout the year is recorded in the table below.\vspace{-1mm}
         \begin{center}
@@ -897,7 +923,7 @@
         \end{tabularx}\vspace{3mm}\\
         
         It is assumed that these will fit a Poisson distribution. Test this assertion at the 0.05\\ significance level.\hfill\textbf{(10 marks)}
-    \item A factory has a machine. The number of times it broken each week has recorded over 100 weeks with the following results.\vspace{2mm}\\
+    \item A factory has a machine. The number of times it broke down each week has recorded over 100 weeks with the following results.\vspace{2mm}\\
         \begin{tabularx}{0.75\textwidth}{|X|*6{P{8.5mm}|}}
             \hline
             \textbf{Number of times broken down} & 0  & 1  & 2  & 3 & 4 & 5   \\\hline
@@ -919,7 +945,7 @@
         Using a suitable test with a 0.05 significance level, and stating you null and alternative hypotheses, \\see if the assumption is reasonable. \hfill\textbf{(6 marks)}
         
     \newpage
-    \item A student of botany believes that a certain species of wild orchid plants grow in random position in grassy meadowland. He recorded the number of plants in one square metre of grassy meadow, and repeated the procedure to obtain the 148 results in the table.\vspace{2mm}\\
+    \item A student of botany believes that a certain species of wild orchid plants grow in random positions in grassy meadowland. He recorded the number of plants in one square metre of grassy meadow, and repeated the procedure to obtain the 148 results in the table.\vspace{2mm}\\
         \begin{tabularx}{0.8\textwidth}{|X|*7{P{9mm}|}P{20mm}|}
             \hline
             \textbf{Number of plants} & 0  & 1  & 2  & 3  & 4  & 5  & 6 & 7 or greater   \\\hline
@@ -940,7 +966,7 @@
             \item Find the values of $s$ and $t$ to two decimal places. \hfill\textbf{(2 marks)}
             \item Stating clearly your hypotheses, test at the 5\% level of significance whether or not this \\Poisson model is supported by these data. \hfill\textbf{(5 marks)}
         \end{enumerate}
-    \item The following table shows observed values from a distribution which is though to be modelled by a \\geometric distribution.\vspace{2mm}\\
+    \item The following table shows observed values from a distribution which is thought to be modelled by a \\geometric distribution.\vspace{2mm}\\
         \begin{tabularx}{0.77\textwidth}{|X|*7{P{10mm}|}}
             \hline
             \textbf{$k$}                        & 1  & 2  & 3  & 4 & 5 & 6 & \textbf{Total}   \\\hline
@@ -961,7 +987,7 @@
                 \end{mybox2}
             \end{tabularx}
         \end{table}\vspace{-4mm}
-    \item Each day after work Katie flags down a taxi to take her home. She records how many taxis she tries to flag down before one stop, over the course of 100 days.\vspace{2mm}\\
+    \item Each day after work Katie flags down a taxi to take her home. She records how many taxis she tries to flag down before one stops, over the course of 100 days.\vspace{2mm}\\
         \begin{tabularx}{0.57\textwidth}{|X|*6{P{10mm}|}}
             \hline
             \textbf{Attempts}  & 1  & 2  & 3 & 4 & 5 & \textbf{Total}   \\\hline
@@ -983,18 +1009,18 @@
     \item When analysing the results of a $3\times 2$ contingency table it was found that\vspace{2mm}\\
         ${\mathlarger\sum _{i=1}^{6}}\dfrac{( O_{i} -E_{i})^{2}}{E_{i}}=2.38$ \vspace{2mm}
         
-        Write down the number of degrees of freedom and the critical value appropriate to these data in order to carry out a $\chi^2$ test of significance at the 5\%.
+        Write down the number of degrees of freedom and the critical value appropriate to these data in order to carry out a $\chi^2$ test of significance at the 5\% level.
     
     \item Three different types of locality were studies to see if the ownership, or non-ownership, of a  television was \par
         or was not related to the locality, ${\mathlarger\sum}\dfrac{( O_{i} -E_{i})^{2}}{E_{i}}$ was evaluated and found to be 13.1. \par
         Using a 5\% level of significance, carry out a suitable test and state your conclusion.
         
-    \item In a college, three different groups of students sit the same examination. The results of the examination are classified as Credit, Pass or Fail. In order to test whether or not there is an association between the group, and exam results. The statistic, ${\mathlarger\sum}\dfrac{( O_{i} -E_{i})^{2}}{E_{i}}$ is evaluated and found to be equal to 10.28.\par
+    \item In a college, three different groups of students sit the same examination. The results of the examination are classified as Credit, Pass or Fail. In order to test whether or not there is an association between the group, and exam results, the statistic, ${\mathlarger\sum}\dfrac{( O_{i} -E_{i})^{2}}{E_{i}}$ is evaluated and found to be equal to 10.28.\par
         \begin{enumerate}[label=\bfseries \alph*\space ]
             \item Explain why there are 4 degrees of freedom in this situation.
             \item Using a 5\% level of significance, carry out the test and state your conclusion.
         \end{enumerate}
-    \item The grades of 200 students in both Mathematics and English were studied with the following results.
+    \item The grades of 200 students in both Mathematics and English were studied with the following results:
         \begin{center}
             \begin{minipage}[t]{0.55\linewidth}
                 \renewcommand{\arraystretch}{1.2}
@@ -1030,7 +1056,7 @@
         
     \item In addition to being classed into grades A, B, C, D and E, 200 students are classified as male or female and their results are summarised in a contingency table.
     
-        Assuming all expected values are 5 or more , the statistic ${\mathlarger\sum}\dfrac{( O_{i} -E_{i})^{2}}{E_{i}}$ was 14.27.
+        Assuming all expected values are 5 or more, the statistic ${\mathlarger\sum}\dfrac{( O_{i} -E_{i})^{2}}{E_{i}}$ was 14.27.
         
         Stating your hypotheses and using 1\% significance level, investigate whether or not gender and grade are associated.
     
@@ -1042,9 +1068,9 @@
         \end{enumerate}
         
         
-    \item During an influenza epidemic, 15 boys and 8 girls became ill out of a year group of 22 boy and 28 girls. Assuming that this group may be treated as a random sample of the age group, test at the 5\% significance level the hypothesis that there is no connection between gender and susceptibility to influenza.
+    \item During an influenza epidemic, 15 boys and 8 girls became ill out of a year group of 22 boys and 28 girls. Assuming that this group may be treated as a random sample of the age group, test at the 5\% significance level the hypothesis that there is no connection between gender and susceptibility to influenza.
     
-    \item In a study of marine organisms, a biologist collected specimens from three beaches and counted the number of ales and females in each sample, with the following results:
+    \item In a study of marine organisms, a biologist collected specimens from three beaches and counted the number of males and females in each sample, with the following results:
         \begin{center}
             \begin{minipage}[t]{0.5\linewidth}
                 \renewcommand{\arraystretch}{1.2}
@@ -1076,7 +1102,7 @@
         \end{center}
         Using the $\chi^2$ statistic and a significance test at the 5\% level to decide whether or not there is an association between age and number of credit cards possessed. \hfill\textbf{(6 marks)}
         
-    \item Members of four local gyms were surveyed to find out if they had injured themselves while working out in the last month. The results are summarised in the below:
+    \item Members of four local gyms were surveyed to find out if they had injured themselves while working out in the last month. The results are summarised in the table below:
         \begin{center}
             \begin{minipage}[t]{0.7\linewidth}
                 \renewcommand{\arraystretch}{1.2}
@@ -1094,7 +1120,7 @@
         A test is carried out at the 5\% significance level to determine whether or not there is an association between injuries and choice of gym.
         \begin{enumerate}[label=\bfseries \alph*\space ]
             \item State the null hypothesis. \hfill\textbf{(1 mark)}
-            \item Show that the expected frequency of member injured at gym $C$ is 6.88. \hfill\textbf{(1 mark)}
+            \item Show that the expected frequency of members injured at gym $C$ is 6.88. \hfill\textbf{(1 mark)}
             \item Calculate the test statistic for this test, and state with reasons whether or not the null hypothesis is rejected. \hfill\textbf{(5 marks)}
         \end{enumerate}
     
@@ -1153,7 +1179,7 @@
         
         Write down the number of degrees of freedom and the critical value of $\chi^2$ appropriate to this test, assuming a 5\% significance level.
     
-    \item A new drug to treat the common cold was used with a randomly selected group of 100 volunteers. Each was given the drug and their health was monitored to see if they caught a cold. A randomly selected control group of 100 volunteers was treated with a dummy pill. The results are shown in the table below.
+    \item A new drug to treat the common cold was used with a randomly selected group of 100 volunteers. Each was given the drug and their health was monitored to see if they caught a cold. A randomly selected control group of 100 volunteers was treated with a dummy pill. The results are shown in the table below:
         \begin{center}
             \begin{minipage}[t]{0.45\linewidth}
                 \begin{tabularx}{\textwidth}{|X|*2{P{20mm}|}}
@@ -1167,7 +1193,7 @@
         \end{center}
         Using a 5\% significant level, test whether or not the chance of catching a cold is affected \\by taking the new drug. State your hypotheses carefully. \hfill\textbf{(6 marks)}
         
-    \item Breakdowns on a certain stretch of motorway were recorded each day for 80 consecutive days. \\The results are summarised in the table below.
+    \item Breakdowns on a certain stretch of motorway were recorded each day for 80 consecutive days. \\The results are summarised in the table below:
         \begin{center}
         \begin{minipage}[t]{0.6\linewidth}
             \begin{tabularx}{\textwidth}{|X|*4{>{\centering\arraybackslash}p{10mm}|}}
@@ -1182,7 +1208,7 @@
         It is suggested that the number of breakdowns per day can be modelled by a Poisson distribution. \vspace{2mm}\\
         Using 5\% significance level, test whether or not the Poisson distribution is a suitable \\model for these data. State your hypotheses clearly.\hfill\textbf{(9 marks)}
         
-    \item A survey in a college was commissioned to investigate whether or not there was any association between gender and passing a driving test. A group of 50 males and 50 females were asked whether they passed or failed their driving test at the first attempt. All the students asked had taken the test. \\The results were as follows.
+    \item A survey in a college was commissioned to investigate whether or not there was any association between gender and passing a driving test. A group of 50 males and 50 females were asked whether they passed or failed their driving test at the first attempt. All the students asked had taken the test. \\The results were as follows:
         \begin{center}
             \begin{minipage}[t]{0.4\linewidth}
                 \begin{tabularx}{\textwidth}{|X|*2{P{20mm}|}}
@@ -1244,7 +1270,7 @@
         Using a 5\% level of significance, carry of out a $\chi^2$ test of the hypothesis that the number \\
         of accidents per week has a Poisson distribution. \hfill\textbf{(9 marks)}
     
-    \item Samples of stones were taken at two sites on a beach which were 1 mile apart. The rock types of the stones were found and classified as igneous, sedimentary or other types, with the following results.
+    \item Samples of stones were taken at two sites on a beach which were 1 mile apart. The rock types of the stones were found and classified as igneous, sedimentary or other types, with the following results:
         \begin{center}
             \begin{minipage}[t]{0.52\linewidth}
                 \renewcommand{\arraystretch}{1.1}
@@ -1276,7 +1302,7 @@
             \item Using a significance level of 5\%, test to see if these could be modelled by a \\Poisson distribution. \hfill\textbf{(8 marks)}
         \end{enumerate}
         
-    \item A study was done of how many students in a college were left-handed and how many were right-handed. As well as left- or right-handedness the gender of each persion was also recorded with the following results.
+    \item A study was done of how many students in a college were left-handed and how many were right-handed. As well as left- or right-handedness the gender of each person was also recorded with the following results:
         \begin{center}
             \begin{minipage}[t]{0.45\linewidth}
                 \begin{tabularx}{\textwidth}{|X|*2{P{25mm}|}}
@@ -1291,7 +1317,7 @@
         Use a significance test at the 0.05 level to see if there is an association between gender\\ and left- and right-handedness \hfill\textbf{(6 marks)}
         
     \newpage
-    \item A school science department collected data on which science subject students found the most interesting. A random sample of 300 students gave the following results.
+    \item A school science department collected data on which science subject students found the most interesting. A random sample of 300 students gave the following results:
         \begin{center}
             \begin{minipage}[t]{0.65\linewidth}
                 \renewcommand{\arraystretch}{1.2}
@@ -1311,7 +1337,7 @@
             \item Show that the expected frequency for females choosing biology is 29.47 (to 2 d.p.) \hfill\textbf{(1 mark)}
             \item Calculate the remaining expected frequencies, and the test statistic for this test. \hfill\textbf{(3 marks)}
             \item State whether or not the null hypothesis should be rejected. Justify your answer. \hfill\textbf{(2 marks)}
-            \item Would the test be rejected if instead the test were carried out at the 5\% level of\\ significance? \hfill\textbf{(1 mark)}
+            \item Would the test be rejected, if instead, the test were carried out at the 5\% level of\\ significance? \hfill\textbf{(1 mark)}
         \end{enumerate}
         
     \item The discrete random variable $X$ follows a Poisson distribution with mean 2.15.
@@ -1322,7 +1348,7 @@
                 \item P$(X>2)$ \hfill\textbf{(2 marks)}
             \end{enumerate}
         \end{enumerate}
-        The manager at a call centre recorded the number of calls coming in each minuted between noon and 1pm.\vspace{-1mm}
+        The manager at a call centre recorded the number of calls coming in each minute between noon and 1pm.\vspace{-1mm}
         \begin{center}
             \begin{minipage}[t]{0.85\linewidth}
                 \begin{tabularx}{\textwidth}{|X|*8{P{11mm}|}}
@@ -1336,7 +1362,7 @@
         \begin{enumerate}[resume, label=\bfseries \alph*\space ]
             \item Show that the average number of calls received in a minute is 2.15 \hfill\textbf{(1 mark)}
         \end{enumerate}\vspace{-2mm}
-        The manager believes that the Poisson distribution may be good model for the numer of calls arriving each minute. She uses a Poisson distribution with mean 2.15 to calculate expected frequencies as follows.\vspace{-1mm}
+        The manager believes that the Poisson distribution may be a good model for the number of calls arriving each minute. She uses a Poisson distribution with mean 2.15 to calculate expected frequencies as follows:\vspace{-1mm}
         \begin{center}
             \begin{minipage}[t]{0.85\linewidth}
                 \begin{tabularx}{\textwidth}{|X|*6{P{10mm}|}P{18mm}|}
@@ -1376,9 +1402,9 @@
             \item Carry out a goodness-of-fit test at the 5\% significance level for your chosen \\distribution.    \hfill\textbf{(6 marks)}
         \end{enumerate}
 
-    \item Wilfred calls his parents every weekend to tell them about his week. Unfortunately Wilfred is very forgetful, and can't remember if the last digit of his parents phone number is 2, 5 or 7. When he wants to call his parents, he simply guesses the last number, and wait to see if his parents answer. If they don't he tries again.
+    \item Wilfred calls his parents every weekend to tell them about his week. Unfortunately Wilfred is very forgetful, and can't remember if the last digit of his parents phone number is 2, 5 or 7. When he wants to call his parents, he simply guesses the last number and waits to see if his parents answer. If they don't he tries again.
     
-        The number of times Wilfred dials before he gets through to his parents throughout the year is recorded in the table below.\vspace{-1mm}
+        The number of times Wilfred dials before he gets through to his parents throughout the year is recorded in the table below:\vspace{-1mm}
         \begin{center}
             \begin{tabularx}{0.75\textwidth}{|X|*6{P{12mm}|}}
                 \hline
@@ -1421,8 +1447,8 @@
                     \textbf{Mutation present}   & Yes  & No  \\\hline
                     \textbf{Expected frequency} & 120  & 40  \\\hline
                 \end{tabularx}\vspace{6mm}
-            \item H\textsubscript{0}: There is no difference between the observed and expected distributions.
-                H\textsubscript{1}: There is a difference between the observed and expected distribtuions.
+            \item H\textsubscript{0}: There is no difference between the observed and expected distributions. \\
+                H\textsubscript{1}: There is a difference between the observed and expected distributions.
             \item $X^2=0.3$
         \end{enumerate}
     \item \begin{enumerate}[label=\bfseries \alph*\space ]
@@ -1484,7 +1510,7 @@
         
         From which we calculate $X^2=14.705$. \\
         $\chi_4^2(1\%)=13.277$ therefore we reject the null hypothesis.
-    \item The expected frequencies are \vspace{2mm}\\
+    \item The expected frequencies are: \vspace{2mm}\\
         \begin{tabularx}{0.73\textwidth}{|X|*6{P{12mm}|}}
             \hline
             \textbf{$k$}                  & 1  & 2  & 3    & 4    & 5     & $\geq6$     \\\hline
@@ -1496,20 +1522,20 @@
         Geo(0.4) is a good model for the data.
     \item \begin{enumerate}[label=\bfseries \alph*\space ]
             \item Assuming consecutive letters are independent and equally likely, we could model the number of \\characters until the next vowel using a Geo($\tfrac{5}{26}$) distribution.
-            \item The expected frequencies are \vspace{2mm}\\
+            \item The expected frequencies are: \vspace{2mm}\\
                 \begin{tabularx}{0.73\textwidth}{|X|*6{P{12mm}|}}
                     \hline
                     \textbf{$k$}                  & 1     & 2     & 3    & 4    & 5    & $\geq6$     \\\hline
                     \textbf{Expected frequency}   & 14.42 & 11.65 & 9.41 & 7.60 & 6.14 & 25.78       \\\hline
                 \end{tabularx}\vspace{4mm}
                 
-                From this we calculate $X^@=2.418$.\\
+                From this we calculate $X^2=2.418$.\\
                 Here are 5 degrees of freedom, and $\chi_5^2(5\%)=11.071$, so we do not reject the null hypothesis, \\the data could be modelled by a Geo($\tfrac{5}{26}$) distribution.
             \item e.g. Experiment does not tell us anything about the distribution \\within either the consonant or the vowels.
         \end{enumerate}
     \item \begin{enumerate}[label=\bfseries \alph*\space ]
             \item e.g. It is unlikely that each guess will be independent of the others.
-            \item If Wilfred is equally likely to select the digits 2, 5 or 7, then he has a $\tfrac{1}{3}$ chance of getting the right number each time he calls his parents. So the number of calls can be modelled by a Geo($\tfrac{1}{3}$) distribution. The expected values are \vspace{2mm}\\
+            \item If Wilfred is equally likely to select the digits 2, 5 or 7, then he has a $\tfrac{1}{3}$ chance of getting the right number each time he calls his parents. So the number of calls can be modelled by a Geo($\tfrac{1}{3}$) distribution. The expected values are: \vspace{2mm}\\
                 \begin{tabularx}{0.65\textwidth}{|X|*5{P{12mm}|}}
                     \hline
                     \textbf{Attempts}             & 1     & 2     & 3   & 4    & $\geq5$     \\\hline
@@ -1521,21 +1547,360 @@
                 The evidence suggests Wilfred may not be equally likely to pick up any of the numbers 2, 5 or 7.
         \end{enumerate}
 \end{enumerate}
+
+
+\newpage
+\exercise{(Answers)}
+\begin{enumerate}
+    \setlength\itemsep{0.5em}
+    \item \begin{enumerate}[label=\bfseries \alph*\space ]
+        \item 1.4
+        \item $\chi^2(10\%)=4.605, X^2=5.04$ \\
+            Reject $H_0$ \\
+            These data do not come from a Poisson distribution with $\lambda=1.4$.
+        \end{enumerate}
+    
+    \item \begin{enumerate}[label=\bfseries \alph*\space ]
+        \item 0.4
+        \item $\chi_4^2(5\%)=5.991, X^2=3.19$ \\
+            No reason to reject $H_0$.
+        \end{enumerate}
+    
+    \item $\lambda=3.45, \chi_4^2(5\%)=5.991, X^2=0.990$ \\
+        No reason to reject $H_0$ \\
+        There is not sufficient evidence to suggest the data are not modelled by Po(3.45).
+    
+    \item H\textsubscript{0}: The rate of accidents is constant at the factories. \\
+        H\textsubscript{1}: The rate of accidents isn't constant at the factories. 
+        
+        Total number of accidents = 81 \\
+        Total number of employees = 15 (thousand) \\
+        Mean rate of accidents = $\dfrac{81}{15}=5.4$ (per thousand) \\
+        The calculation of the mean rate is one constraint.
+
+        \begin{tabularx}{0.65\textwidth}{|X|*6{P{12mm}|}}
+            \hline
+            \textbf{Factory}           & $A$     & $B$    & $C$   & $D$  & $E$   & \textbf{Total}   \\\hline
+            \textbf{Observed ($O_i$)}  & 22      & 14     & 25    & 8    & 12    & 81       \\\hline
+            \textbf{Expected ($O_i$)}  & 21.6    & 16.2   & 27    & 5.4  & 10.8  & 81       \\\hline
+            \vspace{-2mm}\textbf{\vspace{1.5mm}$\dfrac{(O_i-E_i)^2}{E_i}$}  & 0.0074 & 0.2988 & 0.1481 & 1.2519 & 0.1333 & 1.8395       \\\hline
+        \end{tabularx}\vspace{4mm}
+
+        There are 5 cells and 1 constraint, so the number of degrees of freedom is $5-1=4$ \\
+        From the tables: $\chi_4^2(5\%)=9.488$
+        
+        As 1.84 is less than 9.488, there is insufficient evidence to reject $H_0$ at the 5\% level. This supports the hypothesis that accidents occur at a constant rate at the factories.
+    
+    \item $\lambda=3.45, \hspace{2mm} \chi_4^2(5\%)=9.488, \hspace{2mm} X^2=0.990$ \\
+        No reason to reject $H_0$. \\
+        There is not sufficient evidence to suggest the data are not modelled by Po(3.45).
+        
+    \item \begin{enumerate}[label=\bfseries \alph*\space ]
+            \item Breakdowns are independent of each other, occur singly at random and at a constant rate.
+            \item $\lambda=0.95, H_0$: the data can be modelled by Po(0.95)\\
+                Expected values; 38.67, 36.74, 17.45, 7.14 \\
+                $\chi_2^2(5\%)=5.991, X^2=16.04$.\\
+                Reject $H_0$. The breakdowns are not modelled by Po(0.95)
+        \end{enumerate}
+    \item H\textsubscript{0}: prizes are uniformly distributed \\
+        H\textsubscript{1}: prizes are not uniformly distributed \\
+        $\chi_9^2(5\%)=16.919, X^2=10.74$ \\
+        Do not reject $H_0$. There is no reason to believe the distribution of prizes is not uniform.
+        
+    \item \begin{enumerate}[label=\bfseries \alph*\space ]
+            \item $\tfrac{383}{148}=2.59$ (2 d.p.)
+            \item It is assumed that plants occur at a constant average rate and occur independently at random in the meadow.
+            \item $s=37.24$ (2 d.p.) \hspace{4mm} $t$=2.50 (2 d.p.)
+            \item $x^2$ < c.v. so accept H\textsubscript{0}.\\
+                Conclude there is no reason to doubt the data can be modelled by Po(2.59).
+        \end{enumerate}
+    
+    \newpage
+    \item \begin{enumerate}[label=\bfseries \alph*\space ]
+            \item We have $\dfrac{1}{p}\approx\dfrac{1}{100}{\mathlarger\sum}k\times O_k=1.62$ so $p\approx 0.617$.
+            \item The expected frequencies are:  \vspace{1mm}\\
+                \begin{tabularx}{0.55\textwidth}{|X|*4{P{12mm}|}}
+                    \hline
+                    \textbf{$k$}                 & 1     & 2     & 3    & $\geq 4$   \\\hline
+                    \textbf{Expected frequency}  & 61.7  & 23.63 & 9.05 & 5.62       \\\hline
+                \end{tabularx}\vspace{4mm}
+                
+                From these we calculate $X^2=0.901$\\
+                There are 2 degrees of freedom (since we have estimated $p$ from the data) and $\chi_2^2(5\%)=5.991$, \\
+                so we do not reject the null hypothesis. \\
+                Geo(0.617) is a good model for the data.
+        \end{enumerate}
+    
+    \item \begin{enumerate}[label=\bfseries \alph*\space ]
+            \item We have $\dfrac{1}{p}\approx\dfrac{1}{100}{\mathlarger\sum}k\times O_k=1.35$, so $p \approx 0.741$.
+            \item The expected frequencies are: \vspace{1mm}\\
+                \begin{tabularx}{0.47\textwidth}{|X|*3{P{12mm}|}}
+                    \hline
+                    \textbf{$k$}                 & 1     & 2     & $\geq 3$   \\\hline
+                    \textbf{Expected frequency}  & 74.1  & 19.19 & 6.71       \\\hline
+                \end{tabularx}\vspace{4mm}
+                
+                Where we have grouped the observations for 3 and above to ensure the expected values \\
+                are all at least 5. From this we can calculate $X^2=0.312$. \\
+                There is only one degree of freedom, and $\chi_1^2(2.5\%)=5.024$.\\
+                Therefore we do not reject the null hypothesis, Geo(0.741) is a good model for the data.
+        \end{enumerate}
+\end{enumerate}
+
+
+\newpage
+\exercise{(Answers)}
+\begin{enumerate}
+    \setlength\itemsep{0.5em}
+    \item $v=2$, $\chi_2^2(5\%)=5.991$
+    
+    \item H\textsubscript{0}: Ownership is not related to locality \\
+        H\textsubscript{1}: Ownership is related to locality \\
+        $\chi_2^2(5\%)=5.991, X^2=13.1$ \\
+        Reject H\textsubscript{0}.
+        
+    \item \begin{enumerate}[label=\bfseries \alph*\space ]
+            \item $(3-1)(3-1)=4$
+            \item $\chi_4^2(5\%)=9.488$. \\
+                Reject H\textsubscript{0}. \\
+                There is an association between groups and grades.
+        \end{enumerate}
+        
+    \item H\textsubscript{0}: There is no relationship between results \\
+        $\chi_4^2(5\%)=9.488, X^2=8.56$ \\
+        Do not reject H\textsubscript{0}. There is no reason to believe there is a relationship between results.
+        
+    \item $\chi_2^2(5\%)=5.991, X^2=1.757$ \\
+        Do not reject H\textsubscript{0}. There is no evidence to suggest association between station and lateness.
+        
+    \item $\chi_4^2(1\%)=13.277$ \\
+        Reject H\textsubscript{0}. Gender and grade appear to be associated.
+        
+    \item \begin{enumerate}[label=\bfseries \alph*\space ]
+        \item \begin{minipage}[t]{0.75\linewidth}
+                \begin{tabularx}{\textwidth}{|X|*3{P{15mm}|}P{5mm}|*2{P{15mm}|}}
+                    \hhline{~|---|~|--|} 
+                    \multicolumn{1}{c|}{}  & \multicolumn{3}{c|}{\bfseries Observed} && \multicolumn{2}{c|}{\bfseries Expected} \\\hhline{|~|-|-|-|~|--|}
+                    \multicolumn{1}{c|}{}  & $A$ & $B$ & \textbf{Total} && $A$   & $B$     \\\hhline{|-|-|-|-|~|-|-|}
+                    \textbf{OK}            & 47  & 28  & 75             && 45    & 30      \\\hhline{|-|-|-|-|~|-|-|}
+                    \textbf{Defecitve}     & 13  & 12  & 25             && 15    & 10      \\\hhline{|-|-|-|-|~|-|-|}
+                    \textbf{Total}         & 60  & 40  & 100            && --    & --      \\\hhline{|-|-|-|-|~|-|-|}
+                \end{tabularx}
+                \vspace{6mm} 
+            \end{minipage}
+        
+        \item H\textsubscript{0}: Factory and quality are not associated. \\
+            H\textsubscript{1}: Factory and quality are associated. \\
+            $\chi_1^2(0.05)=3.841$, \vspace{1mm}\\
+            ${\mathlarger\sum}\dfrac{(O_i-E_i)^2}{E_i}=\dfrac{2^2}{45}+\dfrac{2^2}{30}+\dfrac{2^2}{15}+\dfrac{2^2}{10}=0.8888$ \vspace{2mm}\\
+            0.8888 < 3.841 \\
+            Do not reject H\textsubscript{0}. There is no evidence between factory involved and quality.
+        \end{enumerate}
+    
+    \item H\textsubscript{0}: Gender and susceptibility to flu are not associated. \\
+        H\textsubscript{1}: Gender and susceptibility to flu are associated. \vspace{1mm}\\
+        \begin{minipage}[t]{0.75\linewidth}
+            \begin{tabularx}{\textwidth}{|X|*3{P{15mm}|}P{5mm}|*2{P{15mm}|}}
+                \hhline{~|---|~|--|} 
+                \multicolumn{1}{c|}{}  & \multicolumn{3}{c|}{\bfseries Observed}  && \multicolumn{2}{c|}{\bfseries Expected} \\\hhline{|~|-|-|-|~|--|}
+                \multicolumn{1}{c|}{}  & \textbf{Boys}  & \textbf{Girls} & \textbf{Total} && \textbf{Boys}  & \textbf{Girls} \\\hhline{|-|-|-|-|~|-|-|}
+                \textbf{Flu}           & 15             & 8              & 23             && 10.12          & 12.88          \\\hhline{|-|-|-|-|~|-|-|}
+                \textbf{No flu}        & 7              & 20             & 27             && 11.88          & 15.12          \\\hhline{|-|-|-|-|~|-|-|}
+                \textbf{Total}         & 22             & 28             & 50             && --             & --             \\\hhline{|-|-|-|-|~|-|-|}
+            \end{tabularx}
+            \vspace{4mm} 
+        \end{minipage}
+        
+        $\chi_1^2(5\%)=3.841, X^2=7.78$ \\
+        Reject H\textsubscript{0}. There is evidence or an association between gender and susceptibility to influenza.
+        
+    \item $\chi_2^2(5\%)=5.991, X^2=27.27$ \\
+        Reject H\textsubscript{0}. There is evidence of an association between the gender of an organism and the beach on which it is found.
+    
+    \item H\textsubscript{0}: There is no association between age and number of credit cards. \\
+        H\textsubscript{1}: There is an association between age and number of credit cards. \\
+        $\chi_1^2(5\%)=3.841, X^2=8.31$ \\
+        Reject H\textsubscript{0}. There is an association between age and the number of credit cards possessed.
+        
+    \newpage
+    \item \begin{enumerate}[label=\bfseries \alph*\space ]
+            \item H\textsubscript{0}: There is no association between gym and whether or not a member got injured. \\
+                H\textsubscript{1}: There is an association between gym and whether or not a member got injured.
+            
+            \item $\dfrac{34}{865} \times 175=6.88$ (2 d.p.) \vspace{1mm}
+            \item Expected frequencies are: \vspace{1mm}\\
+                \begin{tabularx}{0.55\textwidth}{|X|*4{P{12mm}|}}
+                    \hline
+                    \textbf{Gym}                & $A$    & $B$    & $C$    & $D$     \\\hline
+                    \textbf{Expected injured}   & 9.32   & 10.14  & 6.88   & 7.66    \\\hline
+                    \textbf{Expected uninjured} & 227.68 & 247.86 & 168.12 & 187.34  \\\hline
+                \end{tabularx}\vspace{4mm}
+                
+                From which we calculate $X^2=7.732$ \\
+                There are 3 degrees of freedom and $\chi_3^2$, so we do not reject the null hypothesis, there is not enough evidence at the 5\% significance level to think that any gym is more dangerous than the others.
+        \end{enumerate}
+    \item \begin{enumerate}[label=\bfseries \alph*\space ]
+            \item H\textsubscript{0}: The is no association between science studied and pay. \\
+                H\textsubscript{1}: The is an association between science studied and pay. 
+            \item The expected frequencies are: \vspace{1mm}\\
+                \begin{minipage}[t]{0.63\linewidth}
+                    \renewcommand{\arraystretch}{1.1}
+                    \begin{tabularx}{\textwidth}{|C|*3{P{20mm}|}}
+                        \hline
+                                                                   & \multicolumn{3}{l|}{\textbf{Salary}}                     \\\cline{2-4}
+                        \multirow{-2}{*}{\textbf{Science studied}} & \textbf{£0-£40k} & \textbf{£40k-£60k} & \textbf{>£60k}   \\\hline
+                        \textbf{Biology}                           & 70.19            & 26.40              & 7.41             \\\hline
+                        \textbf{Chemistry}                         & 72.89            & 27.42              & 7.69             \\\hline
+                        \textbf{Physics}                           & 74.92            & 28.18              & 7.90             \\\hline
+                    \end{tabularx}
+                    \vspace{4mm}
+                \end{minipage}
+                
+                From which we calculate $X^2=2.031$. \\
+                The number of degrees of freedom is $(3-1)\times (3-1)=4$ and $\chi_4^2(5\%)=9.49$ \\
+                Therefore, we do not reject the null hypothesis. \\
+                There is not enough evidence at the 5\% significance level to think that the subject studied has an effect on pay.
+        \end{enumerate}
+\end{enumerate}
+
+\newpage
+\exercise{Mixed Exercise (Answers)}
+\begin{enumerate}
+    \setlength\itemsep{0.5em}
+    \item 23.209
+    \item 15.507
+    \item $v=8$, critical region $\chi^2>15.07$
+    \item $v=6$, 12.592
+    \item H\textsubscript{0}: Taking drug and catching a cold are independent (not associated) \\
+        H\textsubscript{1}: Taking drug and catching a cold are not independent (associated) \vspace{1mm}\\
+        ${\mathlarger\sum}\dfrac{(O-E)^2}{E}=2.53$ \vspace{2mm}\\
+        $v=1$ \hspace{2mm} $\chi_1^2(5\%)=3.841>2.53$ \\
+        No reason to believe that the chance of catching a cold is affected by taking the new drug.
+    \item H\textsubscript{0}: Poisson distribution is a suitable model \\
+        H\textsubscript{1}: Poisson distribution is not a suitable model \\
+        From these data $\lambda=\tfrac{52}{80}=0.65$ \\
+        Expected frequencies: 41.76, 27.15, 11.09 (for 8.82, 2.27) \\
+        $a=0.05, v=3-1-1=1$; critical value = 3.841 \vspace{1mm}\\
+        ${\mathlarger\sum}\dfrac{(O-E)^2}{E}=1.312$ \vspace{2mm}\\
+        Since 1.312 is not in the critical region there is insufficient evidence to reject H\textsubscript{0} and we can conclude that the Poisson model is a suitable one.
+        
+    \item 27.5, 22.5; 27.5, 22.5 \vspace{1mm}\\
+        ${\mathlarger\sum}\dfrac{(O-E)^2}{E}=\dfrac{(23-27.5)^2}{27.5}+...\dfrac{(18-22.5)^2}{22.5}=3.27$ \vspace{2mm}\\
+        $a=0.10 \Rightarrow \chi^2>2.705$ \\
+        3.27 > 2.705 \\
+        Since 3.27 is in the critical region there is evidencne of association between gender and test result.
+        
+    \item \begin{enumerate}[label=\bfseries \alph*\space ]
+            \item Each box has an equal chance of being opened - we would expect each box to be opened 20 times.
+            \item $\chi_4^2(5\%)=9.488, \chi^2=2.3$ \\
+                No reason to reject H\textsubscript{0}. A discrete uniform distribtuion could be a good model.
+        \end{enumerate}
+    
+    \item \begin{enumerate}[label=\bfseries \alph*\space ]
+            \item 0.72
+            \item $\chi_2^2(5\%)=5.991, X^2=2.62$ \\
+                No reason to reject H\textsubscript{0}. The B(5, 0.72) could be a good model.
+        \end{enumerate}
+    
+    \item $\lambda=0.654, v=2, X^2=21.506$, \\
+        $\chi_2^2(5\%)=5.991$. Reject H\textsubscript{0}. \\
+        Po(0.654) distribution is not a suitable model.
+    
+    \item $\chi_2^2(5\%)=5.991, X^2=4.74...$
+    
+    \item \begin{enumerate}[label=\bfseries \alph*\space ]
+            \item 4.28
+            \item $\chi_4^2(5\%)=9.488, X^2=1.18$\\
+                No reason to reject H\textsubscript{0}. Po(4.28) could be a good model.
+        \end{enumerate}
+    
+    \item $\chi_1^2(5\%)=3.841. X^2=10.42$. Reject H\textsubscript{0} \\
+        There is evidence to suggest association between left-handedness and gender in this population.
+    
+    \newpage
+    \item \begin{enumerate}[label=\bfseries \alph*\space ]
+            \item H\textsubscript{0}: There is no association between gender and preferred subject. \\
+                H\textsubscript{1}: There is an association between gender and preferred subject. \vspace{1mm}
+            
+            \item $\dfrac{(28+40)\times (45+40+45)}{300}\approx 29.47$ \vspace{2mm}
+            \item The expected frequencies are: \vspace{1mm}\\
+                \begin{minipage}[t]{0.65\linewidth}
+                    \renewcommand{\arraystretch}{1.2}
+                    \begin{tabularx}{\textwidth}{|C|P{15mm}|*3{P{20mm}|}}
+                        \cline{3-5}
+                        \multicolumn{2}{c|}{} & \multicolumn{3}{c|}{\textbf{Subject}}                                                      \\\cline{3-5}
+                        \multicolumn{2}{c|}{}                               & \textbf{Physics} & \textbf{Biology} & \textbf{Chemistry}     \\\hline
+                                                          & \textbf{Male}   & 67.43            & 38.53            & 64.03                     \\\cline{2-5}
+                        \multirow{-2}{*}{\textbf{Gender}} & \textbf{Female} & 51.57            & 29.47            & 48.97                  \\\hline
+                    \end{tabularx}
+                    \vspace{5mm}
+                \end{minipage} \\
+                From which we calculate $X^2=8.685$.
+            \item There are $(3-1)\times (2-1)=2$ degrees of freedom, and $\chi_2^2(1\%)=9.21$. \\
+                Therefore we do not reject the null hypothesis.
+            \item Since $\chi_2^2(5\%)=5.991$, we would reject the null hypothesis at the 5\% significance level.
+        \end{enumerate}
+        
+    \item \begin{enumerate}[label=\bfseries \alph*\space ]    
+            \item \begin{enumerate}[label=\bfseries \roman*\space ]
+                    \item P$(X=1)\approx 0.2504$
+                    \item P$(X>2)\approx 0.3639$
+                \end{enumerate}
+            \item $\sum k\times O_k = \tfrac{129}{60}=2.15$
+            \item $a=16.15, b=1.36$
+            \item H\textsubscript{0}: The data can be modelled by a Poisson distribution with mean 2.15. \\
+                H\textsubscript{1}: The data cannot be modelled by a Poisson distribution with mean 2.15.
+            \item The chi-squared test is not very effective if the expected values are below 5, \\
+                so we combine expected values in order to make sure each of the expected values are at least 5.
+            \item The test statistic is $X^2=2.507$. There are 3 degrees of freedom (5 observations and 2 constraints since we estimated the mean from the data). \\
+                From the tables we see $\chi_3^2(5\%)=7.815$. Therefore we do not reject the null hypothesis.
+        \end{enumerate}
+    
+    \item \begin{enumerate}[label=\bfseries \alph*\space ]
+            \item A geometric distribution would be a good choice.
+            \item We have $\dfrac{1}{p}\approx \dfrac{1}{255}{\mathlarger\sum}k \times O_k=\dfrac{524}{255}$, so $p\approx\dfrac{255}{524}$
+            \item The expected values are \vspace{1mm}\\
+                \begin{minipage}[t]{0.80\linewidth}
+                    \begin{tabularx}{\textwidth}{|X|*6{P{12mm}|}}
+                        \hline
+                        \textbf{Number of calls}     & 1      & 2     & 3     & 4     & 5    & $\geq 6$   \\\hline
+                        \textbf{Expected Frequency}  & 124.09 & 63.70 & 32.70 & 16.79 & 8.62 & 9.09       \\\hline
+                    \end{tabularx}
+                    \vspace{4mm}
+                \end{minipage} \\
+                From which we calculate $X^2=14.84$. There are 4 degrees of freedom and $\chi_4^2(5\%)=9.488$, \\so we reject the null hypothesis, the data is not well modelled by a geometric distribution.
+        \end{enumerate}
+    
+    \item \begin{enumerate}[label=\bfseries \alph*\space ]
+            \item e.g. It is unlikely that each guess will be independent of the others.
+            \item If Wilfred is equally likely to select the digits 2, 5 or 7, then he has a $\tfrac{1}{3}$ chance of getting the right number each time he calls his parents. So the number of calls can be modelled by a Geo($\tfrac{1}{3}$) distribution. The expected values are: \vspace{1mm}\\
+                \begin{tabularx}{0.65\textwidth}{|X|*5{P{12mm}|}}
+                    \hline
+                    \textbf{Attempts}             & 1     & 2     & 3   & 4    & $\geq5$     \\\hline
+                    \textbf{Expected frequency}   & 17.33 & 11.56 & 7.7 & 5.14 & 10.27       \\\hline
+                \end{tabularx}\vspace{4mm}
+                
+                From which we can calculate $X^2=14.914$. \\
+                There are four degrees of freedom and $\chi_4^2=9.488$, so we reject the null hypothesis. \\
+                The evidence suggests Wilfred may not be equally likely to pick up any of the numbers 2, 5 or 7.
+        \end{enumerate}
+\end{enumerate}
+
+\newpage
+\textbf{Challenge}
+\begin{enumerate}[label=\bfseries \alph*\space ]
+    \item Using the midpoints of each range, we calculate the mean and variance. Mean = 14.14, Var = 17.11.
+    \item We calculate expected frequencies as follows \vspace{1mm}\\
+        \begin{tabularx}{0.65\textwidth}{|X|*5{P{12mm}|}}
+            \hline
+            \textbf{Attempts}             & 1     & 2     & 3   & 4    & $\geq5$     \\\hline
+            \textbf{Expected frequency}   & 17.33 & 11.56 & 7.7 & 5.14 & 10.27       \\\hline
+        \end{tabularx}\vspace{4mm}
+        
+        The null and alternative hypotheses are:\\
+        H\textsubscript{0}: The call length can be modelled by a normal distribution \\
+        H\textsubscript{1}: The call length can't be modelled by a normal distribution 
+        
+        From this we can calculate $X^2=3.242$. There are 2 degrees of freedom, since there are 5 observations, we estimated 2 parameters, and we have the constraint of the total summing to 500. Thus the critical value $\chi_2^2(5\%)=5.991$. Hence we do not reject the null hypothesis, the length of the call can be modelled by a normal distribution.  
+\end{enumerate}
 \end{document}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
