@@ -1,0 +1,135 @@
+%
+% Elliott Hudson College - Process Test Template
+% Originally created on: May 3rd 2021
+%
+% Copyright (C) 2021 Ellis Dickinson
+%
+% LICENSE:
+% This program is free software: you can redistribute it and/or modify
+% it under the terms of the GNU General Public License as published by
+% the Free Software Foundation, either version 3 of the License, or
+% any later version.
+%
+% This program is distributed in the hope that it will be useful,
+% but WITHOUT ANY WARRANTY; without even the implied warranty of
+% MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+% GNU General Public License for more details.
+%
+% You should have received a copy of the GNU General Public License
+% along with this program. If not, see <https://www.gnu.org/licenses/>.
+%
+%
+% IMPORTANT!!!!
+% When compiling this document, please use XeLaTeX
+% Other compilers do not support some of the features within this document.
+%
+
+\documentclass[fleqn]{article}
+
+\setcounter{section}{1}                                              % Set the Unit Number (without Leading 0's)
+\newcommand{\bookletunittitle}{Algebraic expressions}                % Set the Unit Title
+\newcommand{\
+
+%\newcommand{\coursetitle}{AS Pure Mathematics (Year 1)}             % Set the Course Title
+%\newcommand{\bookletsubtitle}{Content last revised by: J Sherwood}  % Set the Subtitle
+
+
+
+
+\input{components/preamble}
+\usepackage{tabularx}
+%\usepackage{xcolor}
+\usepackage{colortbl}
+\usepackage{tablestyles}
+
+\newtcolorbox{bilety}{
+    sharp corners,
+    enhanced,
+    colback=white,
+    left=3pt,
+    right=3pt,
+    top=3pt,
+    bottom=3pt,
+    width=3cm,
+    before upper={\begin{minipage}[b][2.5cm]{\linewidth}},
+    after upper={\end{minipage}}
+}
+
+\fancypagestyle{processtest}{
+    \fancyhf{} % clear all header and footer fields
+    \fancyfoot[R]{ %left hand side
+        \vspace{-4cm}
+        \begin{bilety}\sffamily
+            Total marks
+            \vfill
+            \hfill of \maxmarks
+        \end{bilety}
+    }
+    \renewcommand{\headrulewidth}{0pt}
+    \renewcommand{\footrulewidth}{0pt}
+}
+
+
+\begin{document}
+\pagestyle{processtest}
+
+\begin{minipage}{.15\textwidth}
+    \includegraphics[scale=0.55]{images/ehc-logo-vector}
+\end{minipage}
+\begin{minipage}{.85\textwidth}
+    \sffamily
+    Process Test \getcurrentref{section} -- \bookletunittitle \\
+    Units \#\#.\# to \#\#.\# \\
+    Name:
+\end{minipage}
+
+
+
+
+
+\vspace{4mm}
+
+
+
+\begin{table}[h]
+
+\renewcommand{\arraystretch}{1.5}
+\setlength{\tabcolsep}{5pt}
+%
+\tablestyle[sansbold]
+
+\begin{tabular}{*{2}{p{0.48\textwidth}}}
+\theadstart
+    \rowcolor{ehclogoblue}
+    \thead \textcolor{WildStrawberry}{header} &
+    \thead header \\
+\tbody
+ %
+ content  & content \\
+ content  & content \\
+ content  & content \\
+ %
+ \tsubheadstart
+ \tsubhead subhead &
+ \tsubhead subhead \\
+ %
+ content  & content \\
+ content  & content \\
+ \tend
+\end{tabular}
+\end{table}
+
+
+
+
+
+% TODO Links to the Big Picture
+
+
+
+
+
+
+
+
+\end{document}

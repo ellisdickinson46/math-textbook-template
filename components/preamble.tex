@@ -1,5 +1,7 @@
 % DO NOT MODIFY THIS FIILE
 % ----------------------------------------------
+\usepackage{relsize}
+\usepackage{tabulary}
 \usepackage[dvipsnames, table]{xcolor}
 \usepackage[a4paper, portrait, margin=2cm, top=1.8cm, left=1.8cm, bottom=2cm]{geometry}
 \usepackage{titlesec}
@@ -13,7 +15,7 @@
 \usepackage[inline]{enumitem}
 \usepackage{multicol}
 \usepackage{fancyhdr}
-\usepackage{booktabs, tabularx}
+\usepackage{booktabs, multirow, tabularx}
 \usepackage{mathtools}
 \usepackage{tasks}
 \usepackage{anyfontsize}
@@ -339,5 +341,31 @@
 
 
 
+% Metadata Processing
+% ----------------------------------------------
+\newcommand{\formattedunittitle}{Unit \unitprefix\getcurrentref{section}}
 
-\newcommand{\formattedunittitle}{Unit P\getcurrentref{section}}
+
+
+% Additional tabular column types
+% ----------------------------------------------
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{C}{>{\centering\arraybackslash}X}
+
+
+
+% Additional Tabular Lines
+% ----------------------------------------------
+\makeatletter
+\def\thickhline{%
+  \noalign{\ifnum0=`}\fi\hrule \@height \thickarrayrulewidth \futurelet
+   \reserved@a\@xthickhline}
+\def\@xthickhline{\ifx\reserved@a\thickhline
+               \vskip\doublerulesep
+               \vskip-\thickarrayrulewidth
+             \fi
+      \ifnum0=`{\fi}}
+\makeatother
+
+\newlength{\thickarrayrulewidth}
+\setlength{\thickarrayrulewidth}{2\arrayrulewidth}
