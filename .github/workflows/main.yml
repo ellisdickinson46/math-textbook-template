@@ -35,4 +35,5 @@ jobs:
         with:
           root_file: |
             main.tex
+            FS6.tex
           latexmk_use_xelatex: true
