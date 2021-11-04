@@ -36,8 +36,18 @@
 
 % Preamble Overrides
 \setlength{\tabcolsep}{1mm}
-\usepackage{hhline}
 
+\hypersetup{
+    % pdftoolbar=true,                      % Show Acrobat’s toolbar?
+    % pdfmenubar=true,                      % Show Acrobat’s menu?
+    % pdffitwindow=false,                   % Window fit to page when opened
+    % pdfstartview={FitH},                  % Fits the width of the page to the window
+    pdftitle={\bookletunittitle},           % Title
+    pdfauthor={Stephen Waugh},              % Author
+    pdfsubject={\coursetitle},              % Document Subject
+    pdfcreator={Elliott Hudson College},    % Creator of the document
+    pdfproducer={Elliott Hudson College}    % Producer of the document
+}
 
 % Document Content Starts Here
 \begin{document}
@@ -997,7 +1007,7 @@
         Katie thinks she can model the number of attempts each day using a geometric random \\variable $X \sim \text{Geo}(p)$.
         \begin{enumerate}[label=\bfseries \alph*\space ]
             \item Using the observed frequencies, find an estimate for $p$ (to 3 d.p.). \hfill\textbf{(2 marks)}
-            \item Conduct a goodness-of-fit test at the 2.5\% significance level, and say whether a geometric \\random variable is a good model for the data. \hfill\textbf{(5 marks)}
+            \item Conduct a goodness-of-fit test at the 5\% significance level, and say whether a geometric \\random variable is a good model for the data. \hfill\textbf{(5 marks)}
         \end{enumerate}
 \end{enumerate}
 \newpage
